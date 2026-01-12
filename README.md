@@ -2,6 +2,24 @@
 
 Nuxt 3 application to display an interactive resume based on the JSON Resume format.
 
+## Environment Variables
+
+### `NUXT_PUBLIC_LOGO_DEV_API_KEY`
+
+API key for [logo.dev](https://logo.dev) service used to fetch company logos. This is optional but recommended for better logo display.
+
+**Docker Compose**: Set the `LOGO_DEV_API_KEY` environment variable when running `docker-compose up`:
+
+```bash
+LOGO_DEV_API_KEY=your_api_key_here docker-compose up
+```
+
+Or create a `.env` file:
+
+```env
+LOGO_DEV_API_KEY=your_api_key_here
+```
+
 ## Features
 
 ### Automatic Profile Picture

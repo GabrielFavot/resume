@@ -1,0 +1,20 @@
+version: '3.8'
+
+services:
+  resume:
+    build:
+      context: .
+      dockerfile: Dockerfile
+    container_name: resume
+    ports:
+      - "3000:3000"
+    environment:
+      - NODE_ENV=production
+      - NUXT_PUBLIC_LOGO_DEV_API_KEY=${LOGO_DEV_API_KEY:-}
+    restart: unless-stopped
+    healthcheck:
+      test: ["CMD", "wget", "--quiet", "--tries=1", "--spider", "http://localhost:3000"]
+      interval: 30s
+      timeout: 10s
+      retries: 3
+      start_period: 40s
