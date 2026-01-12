@@ -15,6 +15,10 @@
         <ResumeEducation />
 
         <ResumeSkills />
+
+        <ResumeProjects />
+
+        <ResumeLanguages />
       </div>
     </div>
   </div>
