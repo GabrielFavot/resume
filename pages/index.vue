@@ -1,5 +1,6 @@
 <template>
-  <div class="min-h-screen bg-gradient-to-br dark:from-gray-900 dark:via-black dark:to-gray-900 from-gray-100 via-white to-gray-100 py-8 px-4 transition-colors duration-300">
+  <div
+    class="min-h-screen bg-gradient-to-br dark:from-gray-900 dark:via-black dark:to-gray-900 from-gray-100 via-white to-gray-100 py-8 px-4 transition-colors duration-300">
     <div class="container mx-auto max-w-4xl">
       <div class="flex justify-end mb-4">
         <ColorModeToggle />
@@ -8,8 +9,12 @@
         <ResumeSection>
           <ResumeHeader />
         </ResumeSection>
-        
+
         <ResumeWork />
+
+        <ResumeEducation />
+
+        <ResumeSkills />
       </div>
     </div>
   </div>

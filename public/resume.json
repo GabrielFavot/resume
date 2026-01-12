@@ -37,8 +37,10 @@
         {
             "institution": "EFREI",
             "area": "Software Engineering",
-            "studyType": "Master's degree (Double degree)",
+            "url": "https://efrei.fr",
+            "studyType": "Master's degree)",
             "startDate": "2014-09-01",
+            "location": "Paris, France",
             "endDate": "2019-06-30",
             "courses": [
                 "Software Engineering major"
@@ -47,6 +49,7 @@
         {
             "institution": "Staffordshire University",
             "area": "Computer Science",
+            "url": "https://www.staffs.ac.uk/",
             "studyType": "Exchange program",
             "startDate": "2017-09-01",
             "endDate": "2018-06-30",
