@@ -1,0 +1,67 @@
+{
+  "basics": {
+    "name": "Your Name",
+    "label": "Software Engineer",
+    "email": "your.email@example.com",
+    "location": {
+      "country": "France"
+    },
+    "profiles": [
+      {
+        "network": "LinkedIn",
+        "username": "your-linkedin-username",
+        "url": "https://www.linkedin.com/in/your-linkedin-username"
+      }
+    ]
+  },
+  "education": [
+    {
+      "institution": "EFREI",
+      "area": "Software Engineering",
+      "studyType": "Master's degree",
+      "startDate": "2014-09-01",
+      "endDate": "2019-06-30"
+    }
+  ],
+  "work": [
+    {
+      "name": "Air France",
+      "position": "Frontend Developer Intern",
+      "startDate": "2018-04-01",
+      "endDate": "2018-08-01",
+      "summary": "Worked in a 3-person team on an internal tool using Angular 2+ and TypeScript."
+    },
+    {
+      "name": "Manager.one",
+      "position": "Software Engineer",
+      "startDate": "2019-07-01",
+      "endDate": "2022-08-31",
+      "summary": "Joined as a PHP developer (Yii2) during a final-year internship, then hired full-time. Contributed to the core banking platform, led end-to-end white-label projects, and managed a team of 3 developers."
+    },
+    {
+      "name": "Beamy",
+      "position": "Software Engineer",
+      "startDate": "2022-09-01",
+      "endDate": "2025-05-31",
+      "summary": "Worked with TypeScript (NestJS, Nuxt 3), implemented hexagonal architecture, and handled DevOps tasks (Kubernetes, GCP)."
+    }
+  ],
+  "skills": [
+    {
+      "name": "Programming Languages",
+      "keywords": ["TypeScript", "PHP", "JavaScript"]
+    },
+    {
+      "name": "Frameworks",
+      "keywords": ["NestJS", "Nuxt 3", "Angular 2+", "Yii2"]
+    },
+    {
+      "name": "DevOps / Cloud",
+      "keywords": ["Kubernetes", "Google Cloud Platform"]
+    },
+    {
+      "name": "Architecture",
+      "keywords": ["Hexagonal Architecture"]
+    }
+  ]
+}
