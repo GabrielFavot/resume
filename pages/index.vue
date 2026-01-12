@@ -28,9 +28,6 @@
             <ResumeSection v-if="hasSkills">
               <ResumeSkills />
             </ResumeSection>
-            <ResumeSection v-if="hasLanguages">
-              <ResumeLanguages />
-            </ResumeSection>
           </div>
         </div>
       </div>

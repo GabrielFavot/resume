@@ -1,11 +1,11 @@
 {
     "basics": {
         "name": "Gabriel Favot",
-        "label": "Senior Fullstack Engineer",
+        "label": "Fullstack Engineer",
         "email": "gabriel@favot.fr",
         "phone": "0619984256",
         "url": "https://gab.pm",
-        "summary": "Fullstack Engineer with over 6 years of experience building scalable products in fast-growing startups.",
+        "summary": "Fullstack Engineer with over 6 years of experience building scalable products in fast-growing startups. Passionate about building products that are easy to use and maintain.",
         "location": {
             "city": "Paris",
             "country": "France"
@@ -36,9 +36,9 @@
     "education": [
         {
             "institution": "EFREI",
-            "area": "Software Engineering",
+            "area": "Computer Science",
             "url": "https://efrei.fr",
-            "studyType": "Master's degree)",
+            "studyType": "Engineer degree",
             "startDate": "2014-09-01",
             "location": "Paris, France",
             "endDate": "2019-06-30",
@@ -47,10 +47,10 @@
             ]
         },
         {
-            "institution": "Staffordshire University",
+            "institution": "University of Staffordshire",
             "area": "Computer Science",
             "url": "https://www.staffs.ac.uk/",
-            "studyType": "Exchange program",
+            "studyType": "Bachelor's degree",
             "startDate": "2017-09-01",
             "endDate": "2018-06-30",
             "location": "Stoke-on-Trent, United Kingdom"
