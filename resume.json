@@ -1,67 +1,179 @@
 {
-  "basics": {
-    "name": "Your Name",
-    "label": "Software Engineer",
-    "email": "your.email@example.com",
-    "location": {
-      "country": "France"
+    "basics": {
+        "name": "Gabriel Favot",
+        "label": "Senior Fullstack Engineer",
+        "email": "gabriel@favot.fr",
+        "phone": "0619984256",
+        "url": "https://gab.pm",
+        "summary": "Fullstack Engineer with over 6 years of experience building scalable products in fast-growing startups.",
+        "location": {
+            "city": "Paris",
+            "country": "France"
+        },
+        "profiles": [
+            {
+                "network": "GitHub",
+                "username": "GabrielFavot",
+                "url": "https://github.com/GabrielFavot"
+            },
+            {
+                "network": "LinkedIn",
+                "username": "gabriel-favot",
+                "url": "https://www.linkedin.com/in/gabrielfavot/"
+            }
+        ]
     },
-    "profiles": [
-      {
-        "network": "LinkedIn",
-        "username": "your-linkedin-username",
-        "url": "https://www.linkedin.com/in/your-linkedin-username"
-      }
+    "languages": [
+        {
+            "language": "French",
+            "fluency": "Native"
+        },
+        {
+            "language": "English",
+            "fluency": "Fluent"
+        }
+    ],
+    "education": [
+        {
+            "institution": "EFREI",
+            "area": "Software Engineering",
+            "studyType": "Master's degree (Double degree)",
+            "startDate": "2014-09-01",
+            "endDate": "2019-06-30",
+            "courses": [
+                "Software Engineering major"
+            ]
+        },
+        {
+            "institution": "Staffordshire University",
+            "area": "Computer Science",
+            "studyType": "Exchange program",
+            "startDate": "2017-09-01",
+            "endDate": "2018-06-30",
+            "location": "Stoke-on-Trent, United Kingdom"
+        }
+    ],
+    "work": [
+        {
+            "name": "Air France",
+            "position": "Frontend Developer Intern",
+            "startDate": "2018-04-01",
+            "endDate": "2018-08-01",
+            "summary": "Frontend development on an internal operational tool using Angular and TypeScript.",
+            "highlights": [
+                "Developed and maintained an internal web application for operational teams",
+                "Built reusable UI components and integrated REST APIs",
+                "Worked in a small agile team with direct stakeholder interaction"
+            ]
+        },
+        {
+            "name": "Manager.one",
+            "position": "Backend Software Engineer (PHP)",
+            "url": "https://manager.one",
+            "location": "Paris, France",
+            "startDate": "2019-07-01",
+            "endDate": "2022-08-31",
+            "summary": "Core contributor to a professional online banking platform and white-label ecosystem.",
+            "highlights": [
+                "Contributed to the development of a large-scale B2B professional banking solution.",
+                "Held full ownership of 2 white-label projects: managed direct client relationships (from requirements gathering to feedback), technical implementation, and final delivery.",
+                "Led a team of 3 developers, conducting code reviews and mentoring on best practices."
+            ]
+        },
+        {
+            "name": "Beamy",
+            "position": "Fullstack Software Engineer",
+            "url": "https://beamy.io",
+            "location": "Paris, France",
+            "startDate": "2022-09-01",
+            "endDate": "2025-05-31",
+            "summary": "Fullstack engineer on a SaaS management platform using a modern TypeScript stack.",
+            "highlights": [
+                "Built and maintained scalable backend services with NestJS (TypeScript, PostgreSQL, Redis) and modern frontend features using Nuxt 3.",
+                "Developed a high-performance web extension distributed to 100,000+ users, with strong constraints on data retrieval efficiency.",
+                "Implemented Hexagonal Architecture principles across several projects to improve code decoupling and testability.",
+                "Drove the adoption of AI-assisted development tools within the team, from early GitHub Copilot integration to migrating to Cursor.",
+                "Maintained CI/CD pipelines and deployed new services on GCP and Kubernetes clusters."
+            ]
+        }
+    ],
+    "projects": [
+        {
+            "name": "Sound Kiffeur",
+            "url": "https://sound.kiffeur.fr",
+            "description": "A personal project developed to visualize Spotify listening history and real-time playback through a dynamic and immersive interface.",
+            "highlights": [
+                "Built with Nuxt 3 and integrated Spotify Web API to fetch and process real-time user playback and historical data.",
+                "Experimented with modern frontend techniques to ensure smooth, high-performance visual rendering."
+            ],
+            "keywords": [
+                "Nuxt 3",
+                "TypeScript",
+                "oAuth",
+                "Data Visualization",
+                "Side Project"
+            ]
+        },
+        {
+            "name": "Apartment Full Renovation",
+            "startDate": "2025-06-01",
+            "endDate": "2025-12-31",
+            "description": "End-to-end renovation of a residential property.",
+            "highlights": [
+                "Planned and executed a complete renovation, including bathroom remodeling and electrical system upgrades.",
+                "Learned to manage budgets, timelines, and handle unexpected issues along the way.",
+                "Demonstrated strong hands-on 'maker' skills and attention to detail."
+            ]
+        },
+        {
+            "name": "Personal Home Server & Homelab",
+            "description": "Self-hosted infrastructure managing home automation and private cloud services.",
+            "highlights": [
+                "Architected a home server hosting multiple open-source services and custom micro-apps using Docker.",
+                "Developed a custom Instagram scraping tool to automatically extract and centralize cooking recipes.",
+                "Implemented home automation systems to monitor and control domestic infrastructure."
+            ],
+            "keywords": [
+                "Self-hosting",
+                "Docker",
+                "Home Automation",
+                "Web Scraping",
+                "Infrastructure"
+            ]
+        }
+    ],
+    "skills": [
+        {
+            "name": "Backend",
+            "keywords": [
+                "TypeScript",
+                "NestJS",
+                "Node.js",
+                "PHP"
+            ]
+        },
+        {
+            "name": "Frontend",
+            "keywords": [
+                "Nuxt 3",
+                "Angular",
+                "TypeScript"
+            ]
+        },
+        {
+            "name": "DevOps",
+            "keywords": [
+                "Kubernetes",
+                "CI/CD",
+                "GCP"
+            ]
+        },
+        {
+            "name": "Architecture",
+            "keywords": [
+                "Hexagonal Architecture",
+                "Clean Architecture"
+            ]
+        }
     ]
-  },
-  "education": [
-    {
-      "institution": "EFREI",
-      "area": "Software Engineering",
-      "studyType": "Master's degree",
-      "startDate": "2014-09-01",
-      "endDate": "2019-06-30"
-    }
-  ],
-  "work": [
-    {
-      "name": "Air France",
-      "position": "Frontend Developer Intern",
-      "startDate": "2018-04-01",
-      "endDate": "2018-08-01",
-      "summary": "Worked in a 3-person team on an internal tool using Angular 2+ and TypeScript."
-    },
-    {
-      "name": "Manager.one",
-      "position": "Software Engineer",
-      "startDate": "2019-07-01",
-      "endDate": "2022-08-31",
-      "summary": "Joined as a PHP developer (Yii2) during a final-year internship, then hired full-time. Contributed to the core banking platform, led end-to-end white-label projects, and managed a team of 3 developers."
-    },
-    {
-      "name": "Beamy",
-      "position": "Software Engineer",
-      "startDate": "2022-09-01",
-      "endDate": "2025-05-31",
-      "summary": "Worked with TypeScript (NestJS, Nuxt 3), implemented hexagonal architecture, and handled DevOps tasks (Kubernetes, GCP)."
-    }
-  ],
-  "skills": [
-    {
-      "name": "Programming Languages",
-      "keywords": ["TypeScript", "PHP", "JavaScript"]
-    },
-    {
-      "name": "Frameworks",
-      "keywords": ["NestJS", "Nuxt 3", "Angular 2+", "Yii2"]
-    },
-    {
-      "name": "DevOps / Cloud",
-      "keywords": ["Kubernetes", "Google Cloud Platform"]
-    },
-    {
-      "name": "Architecture",
-      "keywords": ["Hexagonal Architecture"]
-    }
-  ]
 }
