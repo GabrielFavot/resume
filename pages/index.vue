@@ -1,7 +1,18 @@
 <template>
-  <div class="min-h-screen bg-gradient-to-br from-gray-900 via-black to-gray-900">
-    <div class="container mx-auto px-4 py-8">
-      <h1 class="text-white text-4xl font-bold mb-8">Resume</h1>
+  <div class="min-h-screen bg-gradient-to-br dark:from-gray-900 dark:via-black dark:to-gray-900 from-gray-100 via-white to-gray-100 py-8 px-4 transition-colors duration-300">
+    <div class="container mx-auto max-w-4xl">
+      <div class="flex justify-end mb-4">
+        <ColorModeToggle />
+      </div>
+      <ResumeSection>
+        <ResumeHeader />
+      </ResumeSection>
     </div>
   </div>
 </template>
+
+<script lang="ts" setup>
+
+</script>
+
+<style></style>
