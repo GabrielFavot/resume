@@ -58,16 +58,19 @@
     ],
     "work": [
         {
-            "name": "Air France",
-            "position": "Frontend Developer Intern",
-            "url": "https://airfrance.com",
-            "startDate": "2018-04-01",
-            "endDate": "2018-08-01",
-            "summary": "Frontend development on an internal operational tool using Angular and TypeScript.",
+            "name": "Beamy",
+            "position": "Fullstack Software Engineer",
+            "url": "https://beamy.io",
+            "location": "Paris, France",
+            "startDate": "2022-09-01",
+            "endDate": "2025-05-31",
+            "summary": "Fullstack engineer on a SaaS management platform using a modern TypeScript stack.",
             "highlights": [
-                "Developed and maintained an internal web application for operational teams",
-                "Built reusable UI components and integrated REST APIs",
-                "Worked in a small agile team with direct stakeholder interaction"
+                "Built and maintained scalable backend services with NestJS (TypeScript, PostgreSQL, Redis) and modern frontend features using Nuxt 3.",
+                "Developed a high-performance web extension distributed to 100,000+ users, with strong constraints on data retrieval efficiency.",
+                "Implemented Hexagonal Architecture principles across several projects to improve code decoupling and testability.",
+                "Drove the adoption of AI-assisted development tools within the team, from early GitHub Copilot integration to migrating to Cursor.",
+                "Maintained CI/CD pipelines and deployed new services on GCP and Kubernetes clusters."
             ]
         },
         {
@@ -85,39 +88,20 @@
             ]
         },
         {
-            "name": "Beamy",
-            "position": "Fullstack Software Engineer",
-            "url": "https://beamy.io",
-            "location": "Paris, France",
-            "startDate": "2022-09-01",
-            "endDate": "2025-05-31",
-            "summary": "Fullstack engineer on a SaaS management platform using a modern TypeScript stack.",
+            "name": "Air France",
+            "position": "Frontend Developer Intern",
+            "url": "https://airfrance.com",
+            "startDate": "2018-04-01",
+            "endDate": "2018-08-01",
+            "summary": "Frontend development on an internal operational tool using Angular and TypeScript.",
             "highlights": [
-                "Built and maintained scalable backend services with NestJS (TypeScript, PostgreSQL, Redis) and modern frontend features using Nuxt 3.",
-                "Developed a high-performance web extension distributed to 100,000+ users, with strong constraints on data retrieval efficiency.",
-                "Implemented Hexagonal Architecture principles across several projects to improve code decoupling and testability.",
-                "Drove the adoption of AI-assisted development tools within the team, from early GitHub Copilot integration to migrating to Cursor.",
-                "Maintained CI/CD pipelines and deployed new services on GCP and Kubernetes clusters."
+                "Developed and maintained an internal web application for operational teams",
+                "Built reusable UI components and integrated REST APIs",
+                "Worked in a small agile team with direct stakeholder interaction"
             ]
         }
     ],
     "projects": [
-        {
-            "name": "Sound Kiffeur",
-            "url": "https://sound.kiffeur.fr",
-            "description": "A personal project developed to visualize Spotify listening history and real-time playback through a dynamic and immersive interface.",
-            "highlights": [
-                "Built with Nuxt 3 and integrated Spotify Web API to fetch and process real-time user playback and historical data.",
-                "Experimented with modern frontend techniques to ensure smooth, high-performance visual rendering."
-            ],
-            "keywords": [
-                "Nuxt 3",
-                "TypeScript",
-                "oAuth",
-                "Data Visualization",
-                "Side Project"
-            ]
-        },
         {
             "name": "Apartment Full Renovation",
             "startDate": "2025-06-01",
@@ -143,6 +127,36 @@
                 "Home Automation",
                 "Web Scraping",
                 "Infrastructure"
+            ]
+        },
+        {
+            "name": "Resume hosting",
+            "url": "https://cv.gab.pm",
+            "description": "The web application hosting my resume",
+            "highlights": [
+                "Built a web app to display my resume writen in a specifc JSON format in order to be easily editable and readable by machines.",
+                "Hosted on a personal domain using a self-hosted infrastructure."
+            ],
+            "keywords": [
+                "Nuxt 4",
+                "JSON Resume",
+                "Self-hosting"
+            ]
+        },
+        {
+            "name": "Sound Kiffeur",
+            "url": "https://sound.kiffeur.fr",
+            "description": "A personal project developed to visualize Spotify listening history and real-time playback through a dynamic and immersive interface.",
+            "highlights": [
+                "Built with Nuxt 3 and integrated Spotify Web API to fetch and process real-time user playback and historical data.",
+                "Experimented with modern frontend techniques to ensure smooth, high-performance visual rendering."
+            ],
+            "keywords": [
+                "Nuxt 3",
+                "TypeScript",
+                "oAuth",
+                "Data Visualization",
+                "Side Project"
             ]
         }
     ],
