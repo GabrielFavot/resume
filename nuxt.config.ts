@@ -12,5 +12,10 @@ export default defineNuxtConfig({
     fallback: 'dark',
     classSuffix: ''
   },
-  css: ['~/assets/css/main.css']
+  css: ['~/assets/css/main.css'],
+  runtimeConfig: {
+    public: {
+      logoDevApiKey: ''
+    }
+  }
 })

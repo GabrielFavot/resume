@@ -4,9 +4,13 @@
       <div class="flex justify-end mb-4">
         <ColorModeToggle />
       </div>
-      <ResumeSection>
-        <ResumeHeader />
-      </ResumeSection>
+      <div class="space-y-6">
+        <ResumeSection>
+          <ResumeHeader />
+        </ResumeSection>
+        
+        <ResumeWork />
+      </div>
     </div>
   </div>
 </template>

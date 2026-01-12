@@ -4,21 +4,19 @@ import type { ResumeSchema } from '@kurone-kito/jsonresume-types'
 export type Resume = ResumeSchema
 
 export const useResume = async () => {
-    const data = await import('~/public/resume.json') as Resume
+    const data = await $fetch<Resume>('/resume.json')
 
     if (!data) {
         throw new Error('Failed to load resume data')
     }
 
-    const resumeData = data
-
     return {
-        resume: computed(() => resumeData),
-        basics: computed(() => resumeData.basics),
-        work: computed(() => resumeData.work || []),
-        education: computed(() => resumeData.education || []),
-        skills: computed(() => resumeData.skills || []),
-        projects: computed(() => resumeData.projects || []),
-        languages: computed(() => resumeData.languages || [])
+        resume: computed(() => data),
+        basics: computed(() => data.basics),
+        work: computed(() => data.work || []),
+        education: computed(() => data.education || []),
+        skills: computed(() => data.skills || []),
+        projects: computed(() => data.projects || []),
+        languages: computed(() => data.languages || [])
     }
 }

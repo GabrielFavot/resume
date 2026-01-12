@@ -57,6 +57,7 @@
         {
             "name": "Air France",
             "position": "Frontend Developer Intern",
+            "url": "https://airfrance.com",
             "startDate": "2018-04-01",
             "endDate": "2018-08-01",
             "summary": "Frontend development on an internal operational tool using Angular and TypeScript.",
@@ -68,7 +69,7 @@
         },
         {
             "name": "Manager.one",
-            "position": "Backend Software Engineer (PHP)",
+            "position": "PHP Backend Software Engineer",
             "url": "https://manager.one",
             "location": "Paris, France",
             "startDate": "2019-07-01",
