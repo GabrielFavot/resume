@@ -3,7 +3,7 @@
         <div class="flex flex-col md:flex-row md:items-start md:justify-between gap-2">
             <div class="flex-1">
                 <ResumeWorkCompanyInfo :job="job" />
-                <p class="text-lg dark:text-gray-300 text-gray-700 font-medium mt-1">
+                <p class="text-base sm:text-lg dark:text-gray-300 text-gray-700 font-medium mt-1">
                     {{ job.position }}
                 </p>
             </div>

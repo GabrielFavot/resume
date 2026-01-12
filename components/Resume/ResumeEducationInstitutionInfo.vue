@@ -1,12 +1,12 @@
 <template>
-    <div class="flex items-center gap-3">
+    <div class="flex items-center gap-2 sm:gap-3">
         <div v-if="domain && !hasError" class="flex-shrink-0">
             <img :src="logoUrl" :alt="`${institutionName} logo`"
-                class="w-16 h-16 rounded-full object-contain dark:bg-white/5 bg-black/5 p-1.5 border dark:border-white/10 border-gray-300/30"
+                class="w-12 h-12 sm:w-16 sm:h-16 rounded-full object-contain dark:bg-white/5 bg-black/5 p-1.5 border dark:border-white/10 border-gray-300/30"
                 @error="handleError" />
         </div>
         <div class="flex-1 min-w-0">
-            <h3 class="text-xl font-semibold dark:text-white text-gray-900">
+            <h3 class="text-lg sm:text-xl font-semibold dark:text-white text-gray-900">
                 <a v-if="institutionUrl" :href="institutionUrl" target="_blank" rel="noopener noreferrer"
                     class="hover:underline flex items-center gap-2">
                     {{ institutionName }}

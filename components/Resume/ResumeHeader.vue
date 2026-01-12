@@ -2,10 +2,10 @@
   <div class="space-y-6">
     <div class="space-y-2">
       <h1
-        class="text-4xl md:text-5xl font-bold bg-gradient-to-r dark:from-white dark:via-gray-100 dark:to-white from-gray-900 via-gray-800 to-gray-900 bg-clip-text text-transparent">
+        class="text-3xl sm:text-4xl md:text-5xl font-bold bg-gradient-to-r dark:from-white dark:via-gray-100 dark:to-white from-gray-900 via-gray-800 to-gray-900 bg-clip-text text-transparent">
         {{ basics?.name }}
       </h1>
-      <p class="text-xl md:text-2xl dark:text-gray-200/90 text-gray-700/90 font-light">
+      <p class="text-lg sm:text-xl md:text-2xl dark:text-gray-200/90 text-gray-700/90 font-light">
         {{ basics?.label }}
       </p>
     </div>
@@ -14,9 +14,9 @@
       {{ basics.summary }}
     </p>
 
-    <div class="flex flex-wrap gap-3 text-sm">
+    <div class="flex flex-wrap gap-2 sm:gap-3 text-xs sm:text-sm">
       <a v-if="basics?.email" :href="`mailto:${basics.email}`"
-        class="group flex items-center gap-2 px-4 py-2 rounded-xl dark:bg-white/5 bg-black/5 dark:hover:bg-white/10 hover:bg-black/10 dark:border-white/10 border-gray-300/30 dark:hover:border-white/20 hover:border-gray-400/40 backdrop-blur-sm transition-all duration-300 hover:scale-105">
+        class="group flex items-center gap-1.5 sm:gap-2 px-3 sm:px-4 py-1.5 sm:py-2 rounded-xl dark:bg-white/5 bg-black/5 dark:hover:bg-white/10 hover:bg-black/10 dark:border-white/10 border-gray-300/30 dark:hover:border-white/20 hover:border-gray-400/40 backdrop-blur-sm transition-all duration-300 hover:scale-105">
         <Icon name="mdi:email"
           class="w-4 h-4 dark:text-gray-300 text-gray-600 dark:group-hover:text-white group-hover:text-gray-900 transition-colors" />
         <span
@@ -25,7 +25,7 @@
       </a>
 
       <a v-if="basics?.phone" :href="`tel:${basics.phone}`"
-        class="group flex items-center gap-2 px-4 py-2 rounded-xl dark:bg-white/5 bg-black/5 dark:hover:bg-white/10 hover:bg-black/10 dark:border-white/10 border-gray-300/30 dark:hover:border-white/20 hover:border-gray-400/40 backdrop-blur-sm transition-all duration-300 hover:scale-105">
+        class="group flex items-center gap-1.5 sm:gap-2 px-3 sm:px-4 py-1.5 sm:py-2 rounded-xl dark:bg-white/5 bg-black/5 dark:hover:bg-white/10 hover:bg-black/10 dark:border-white/10 border-gray-300/30 dark:hover:border-white/20 hover:border-gray-400/40 backdrop-blur-sm transition-all duration-300 hover:scale-105">
         <Icon name="mdi:phone"
           class="w-4 h-4 dark:text-gray-300 text-gray-600 dark:group-hover:text-white group-hover:text-gray-900 transition-colors" />
         <span
@@ -44,7 +44,7 @@
       </div>
 
       <a v-if="basics?.url" :href="basics.url" target="_blank" rel="noopener noreferrer"
-        class="group flex items-center gap-2 px-4 py-2 rounded-xl dark:bg-white/5 bg-black/5 dark:hover:bg-white/10 hover:bg-black/10 dark:border-white/10 border-gray-300/30 dark:hover:border-white/20 hover:border-gray-400/40 backdrop-blur-sm transition-all duration-300 hover:scale-105">
+        class="group flex items-center gap-1.5 sm:gap-2 px-3 sm:px-4 py-1.5 sm:py-2 rounded-xl dark:bg-white/5 bg-black/5 dark:hover:bg-white/10 hover:bg-black/10 dark:border-white/10 border-gray-300/30 dark:hover:border-white/20 hover:border-gray-400/40 backdrop-blur-sm transition-all duration-300 hover:scale-105">
         <Icon name="mdi:web"
           class="w-4 h-4 dark:text-gray-300 text-gray-600 dark:group-hover:text-white group-hover:text-gray-900 transition-colors" />
         <span
@@ -53,10 +53,10 @@
       </a>
     </div>
 
-    <div v-if="basics?.profiles && basics.profiles.length > 0" class="flex flex-wrap gap-3">
+    <div v-if="basics?.profiles && basics.profiles.length > 0" class="flex flex-wrap gap-2 sm:gap-3">
       <a v-for="profile in basics.profiles" :key="profile.network" :href="profile.url" target="_blank"
         rel="noopener noreferrer"
-        class="group flex items-center gap-2 px-4 py-2 rounded-xl dark:bg-white/5 bg-black/5 dark:hover:bg-white/10 hover:bg-black/10 dark:border-white/10 border-gray-300/30 dark:hover:border-white/30 hover:border-gray-400/40 backdrop-blur-sm transition-all duration-300 hover:scale-105 dark:hover:shadow-lg dark:hover:shadow-white/10 hover:shadow-lg hover:shadow-gray-900/10">
+        class="group flex items-center gap-1.5 sm:gap-2 px-3 sm:px-4 py-1.5 sm:py-2 rounded-xl dark:bg-white/5 bg-black/5 dark:hover:bg-white/10 hover:bg-black/10 dark:border-white/10 border-gray-300/30 dark:hover:border-white/30 hover:border-gray-400/40 backdrop-blur-sm transition-all duration-300 hover:scale-105 dark:hover:shadow-lg dark:hover:shadow-white/10 hover:shadow-lg hover:shadow-gray-900/10">
         <Icon :name="getProfileIcon(profile.network)"
           class="w-5 h-5 dark:text-gray-300 text-gray-600 dark:group-hover:text-white group-hover:text-gray-900 transition-all duration-300 group-hover:scale-110" />
         <span
