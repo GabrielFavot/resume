@@ -1,33 +1,61 @@
-# Resume
+# 📄 Resume
 
-Nuxt 3 application to display an interactive resume based on the JSON Resume format.
+![Nuxt](https://img.shields.io/badge/Nuxt-4.2.2-00DC82?logo=nuxt.js&logoColor=white)
+![TypeScript](https://img.shields.io/badge/TypeScript-5.9.3-3178C6?logo=typescript&logoColor=white)
+![License](https://img.shields.io/badge/License-MIT-yellow.svg)
+![GitHub](https://img.shields.io/github/stars/GabrielFavot/resume?style=social)
 
-## Environment Variables
+Nuxt 4 application to display an interactive resume based on the [JSON Resume](https://jsonresume.org) schema.
 
-### `NUXT_PUBLIC_LOGO_DEV_API_KEY`
+🌐 **Live Demo**: [cv.gab.pm](https://cv.gab.pm)  
+🚀 **Hosted on**: [Coolify](https://coolify.io) - Auto-deployed on push
 
-API key for [logo.dev](https://logo.dev) service used to fetch company logos. This is optional but recommended for better logo display.
-
-**Docker Compose**: Set the `LOGO_DEV_API_KEY` environment variable when running `docker-compose up`:
+## 🚀 How to Install
 
 ```bash
-LOGO_DEV_API_KEY=your_api_key_here docker-compose up
+# Clone the repository
+git clone https://github.com/GabrielFavot/resume.git
+cd resume
+
+# Install dependencies
+npm install
 ```
 
-Or create a `.env` file:
+## 📝 How to Use
 
-```env
-LOGO_DEV_API_KEY=your_api_key_here
+1. **Replace the JSON files** in `public/resume/` with your own resume data following the [JSON Resume schema](https://jsonresume.org/schema/):
+   - `public/resume/resume_en.json` - English version
+   - `public/resume/resume_fr.json` - French version
+
+2. **Set up logo.dev API key** (optional but recommended):
+   
+   Create a `.env` file:
+   ```env
+   NUXT_PUBLIC_LOGO_DEV_API_KEY=your_api_key_here
+   ```
+   
+   Or with Docker Compose:
+   ```bash
+   LOGO_DEV_API_KEY=your_api_key_here docker-compose up
+   ```
+
+3. **Start the development server**:
+   ```bash
+   npm run dev
+   ```
+
+## 🎨 Assets
+
+Assets like profile pictures and company logos are automatically fetched via [logo.dev](https://logo.dev):
+- **Profile picture**: Automatically fetched from the first profile URL in `basics.profiles`
+- **Company logos**: Automatically fetched using the company name from the work/education sections
+
+## 🐳 Docker
+
+```bash
+docker-compose up
 ```
 
-## Features
+## 📄 License
 
-### Automatic Profile Picture
-
-The profile picture is automatically fetched from the first profile URL in the `basics.profiles` list from the `resume.json` file.
-
-- **GitHub**: Uses the GitHub API to fetch the user's avatar
-- **LinkedIn**: Uses unavatar.io to fetch the profile picture
-- **Other services**: Uses unavatar.io as a fallback
-
-The picture automatically displays in the resume header once fetched.
+This project is open source and available under the [MIT License](LICENSE).
