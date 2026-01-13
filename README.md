@@ -1,5 +1,3 @@
-# 📄 Resume
-
 ![Nuxt](https://img.shields.io/badge/Nuxt-4.2.2-00DC82?logo=nuxt.js&logoColor=white)
 ![TypeScript](https://img.shields.io/badge/TypeScript-5.9.3-3178C6?logo=typescript&logoColor=white)
 ![License](https://img.shields.io/badge/License-MIT-yellow.svg)
