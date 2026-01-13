@@ -46,7 +46,7 @@ npm install
 
 Assets like profile pictures and company logos are automatically fetched via [logo.dev](https://logo.dev):
 - **Profile picture**: Automatically fetched from the first profile URL in `basics.profiles`
-- **Company logos**: Automatically fetched using the company name from the work/education sections
+- **Company logos**: Automatically fetched using the company/institution website from the work/education sections
 
 ## 🐳 Docker
 
