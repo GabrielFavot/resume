@@ -3,9 +3,9 @@
         "name": "Gabriel Favot",
         "label": "Fullstack Engineer",
         "email": "gabriel@favot.fr",
-        "phone": "0619984256",
+        "phone": "+33 6 19 98 42 56",
         "url": "https://gab.pm",
-        "summary": "Fullstack Engineer with over 6 years of experience building scalable products in fast-growing startups. Passionate about building products that are easy to use and maintain.",
+        "summary": "Fullstack Engineer avec plus de 6 ans d'expérience dans la création de produits scalables au sein de startups early-stage. Passionné par le développement de produits intuitifs, faciles à utiliser et à maintenir.",
         "location": {
             "city": "Paris",
             "country": "France"
@@ -25,35 +25,35 @@
     },
     "languages": [
         {
-            "language": "🇫🇷 French",
-            "fluency": "Native"
+            "language": "🇫🇷 Français",
+            "fluency": "Langue maternelle"
         },
         {
-            "language": "🇬🇧 English",
-            "fluency": "Fluent"
+            "language": "🇬🇧 Anglais",
+            "fluency": "Courant"
         }
     ],
     "education": [
         {
             "institution": "EFREI",
-            "area": "Computer Science",
+            "area": "Grande École généraliste & numérique ",
             "url": "https://efrei.fr",
-            "studyType": "Engineer degree",
+            "studyType": "Diplôme d'Ingénieur",
             "startDate": "2014-09-01",
             "location": "Paris, France",
             "endDate": "2019-06-30",
             "courses": [
-                "Software Engineering major"
+                "Majeure Software Engineering"
             ]
         },
         {
-            "institution": "University of Staffordshire",
+            "institution": "Staffordshire University",
             "area": "Computer Science",
             "url": "https://www.staffs.ac.uk/",
             "studyType": "Bachelor's degree",
             "startDate": "2017-09-01",
             "endDate": "2018-06-30",
-            "location": "Stoke-on-Trent, United Kingdom"
+            "location": "Stoke-on-Trent, Royaume-Uni"
         }
     ],
     "work": [
@@ -64,13 +64,21 @@
             "location": "Paris, France",
             "startDate": "2022-09-01",
             "endDate": "2025-05-31",
-            "summary": "Fullstack engineer on a SaaS management platform using a modern TypeScript stack.",
+            "summary": "Ingénieur Fullstack sur une plateforme de SaaS Governance utilisant une stack TypeScript moderne.",
             "highlights": [
-                "Built and maintained scalable backend services with NestJS (TypeScript, PostgreSQL, Redis) and modern frontend features using Nuxt 3.",
-                "Developed a high-performance web extension distributed to 100,000+ users, with strong constraints on data retrieval efficiency.",
-                "Implemented Hexagonal Architecture principles across several projects to improve code decoupling and testability.",
-                "Drove the adoption of AI-assisted development tools within the team, from early GitHub Copilot integration to migrating to Cursor.",
-                "Maintained CI/CD pipelines and deployed new services on GCP and Kubernetes clusters."
+                "Développement et maintenance de services back-end avec NestJS (TypeScript, PostgreSQL, Redis) et de features front-end modernes avec Nuxt 3.",
+                "Développement d'une extension web distribuée à plus de 100 000 utilisateurs, avec de fortes contraintes de scalabilité.",
+                "Implémentation des principes d'Architecture Hexagonale sur plusieurs projets pour améliorer le découplage du code et la testabilité.",
+                "Démocratisation de l'adoption des outils de développement assistés par l'IA (IA-driven dev) au sein de l'équipe, de l'intégration précoce de GitHub Copilot à la migration vers Cursor.",
+                "Maintenance de la CI/CD et déploiement de nouveaux services sur GCP et clusters Kubernetes."
+            ],
+            "keywords": [
+                "NestJS",
+                "Nuxt",
+                "TypeScript",
+                "PostgreSQL",
+                "Redis",
+                "GCP"
             ]
         },
         {
@@ -80,76 +88,71 @@
             "location": "Paris, France",
             "startDate": "2019-07-01",
             "endDate": "2022-08-31",
-            "summary": "Core contributor to a professional online banking platform and white-label ecosystem.",
+            "summary": "Contributeur core sur une plateforme de banque en ligne professionnelle et son écosystème en marque blanche.",
             "highlights": [
-                "Contributed to the development of a large-scale B2B professional banking solution.",
-                "Held full ownership of 2 white-label projects: managed direct client relationships (from requirements gathering to feedback), technical implementation, and final delivery.",
-                "Led a team of 3 developers, conducting code reviews and mentoring on best practices."
+                "Contribution au développement d'une solution bancaire B2B à grande échelle.",
+                "Ownership complet de 2 projets en marque blanche : gestion de la relation client directe (du recueil de besoins au feedback), implémentation technique et livraison finale.",
+                "Lead d'une équipe de 3 développeurs : formation de junior, mentoring sur les bonnes pratiques et code reviews."
+            ],
+            "keywords": [
+                "PHP",
+                "Yii Framework 2",
+                "Mssql"
             ]
         },
         {
             "name": "Air France",
-            "position": "Frontend Developer Intern",
+            "position": "Stagiaire Développeur Frontend",
             "url": "https://airfrance.com",
             "startDate": "2018-04-01",
             "endDate": "2018-08-01",
-            "summary": "Frontend development on an internal operational tool using Angular and TypeScript.",
+            "summary": "Développement front-end sur un outil opérationnel de plannification des vols utilisant Angular et TypeScript.",
             "highlights": [
-                "Developed and maintained an internal web application for operational teams",
-                "Built reusable UI components and integrated REST APIs",
-                "Worked in a small agile team with direct stakeholder interaction"
+                "Développement et maintenance d'une application web interne pour les équipes opérationnelles.",
+                "Création de composants UI réutilisables et intégration d'API REST.",
+                "Travail en petite équipe agile avec des interactions directes avec les stakeholders."
+            ],
+            "keywords": [
+                "Angular",
+                "TypeScript",
+                "REST API"
             ]
         }
     ],
     "projects": [
         {
-            "name": "Apartment Full Renovation",
+            "name": "Rénovation d'un logement",
             "startDate": "2025-06-01",
             "endDate": "2025-12-31",
-            "description": "End-to-end renovation of a residential property.",
+            "description": "Rénovation de bout en bout d'un appartement.",
             "highlights": [
-                "Planned and executed a complete renovation, including bathroom remodeling and electrical system upgrades.",
-                "Learned to manage budgets, timelines, and handle unexpected issues along the way.",
-                "Demonstrated strong hands-on 'maker' skills and attention to detail."
+                "Rénovation complète du logement, incluant les sols, la plomberie, l'électricité, la peinture, etc.",
+                "Rénovation de la cuisine et de la salle de bain."
             ]
         },
         {
             "name": "Personal Home Server & Homelab",
-            "description": "Self-hosted infrastructure managing home automation and private cloud services.",
+            "description": "Infrastructure auto-hébergée gérant la domotique et des services cloud personnels.",
             "highlights": [
-                "Architected a home server hosting multiple open-source services and custom micro-apps using Docker.",
-                "Developed a custom Instagram scraping tool to automatically extract and centralize cooking recipes.",
-                "Implemented home automation systems to monitor and control domestic infrastructure."
+                "Architecture d'un serveur domestique (proxmox) hébergeant plusieurs services open-source et micro-apps personnalisées via Docker.",
+                "Développement de plusieurs applications et workflows pour une utilisation privée (scraping, automation, etc.). Incluant https://cv.gab.pm.",
+                "Maintenance de l'infrastructure et des services hébergés."
             ],
             "keywords": [
+                "proxmox",
                 "Self-hosting",
                 "Docker",
-                "Home Automation",
-                "Web Scraping",
+                "Workflows",
                 "Infrastructure"
             ]
         },
         {
-            "name": "Resume hosting",
-            "url": "https://cv.gab.pm",
-            "description": "The web application hosting my resume",
-            "highlights": [
-                "Built a web app to display my resume writen in a specifc JSON format in order to be easily editable and readable by machines.",
-                "Hosted on a personal domain using a self-hosted infrastructure."
-            ],
-            "keywords": [
-                "Nuxt 4",
-                "JSON Resume",
-                "Self-hosting"
-            ]
-        },
-        {
-            "name": "Sound Kiffeur",
+            "name": "Spotify Listening History",
             "url": "https://sound.kiffeur.fr",
-            "description": "A personal project developed to visualize Spotify listening history and real-time playback through a dynamic and immersive interface.",
+            "description": "Projet personnel développé pour visualiser l'historique d'écoute Spotify et la lecture en temps réel via une interface dynamique et immersive.",
             "highlights": [
-                "Built with Nuxt 3 and integrated Spotify Web API to fetch and process real-time user playback and historical data.",
-                "Experimented with modern frontend techniques to ensure smooth, high-performance visual rendering."
+                "Développé en Nuxt 3 et intégration de l'API Spotify Web pour récupérer et traiter les données d'écoute en temps réel et l'historique.",
+                "Expérimentation de techniques frontend modernes pour assurer un rendu visuel fluide et performant."
             ],
             "keywords": [
                 "Nuxt 3",

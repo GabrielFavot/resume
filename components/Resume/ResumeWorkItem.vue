@@ -15,6 +15,13 @@
         </p>
 
         <ResumeWorkHighlights v-if="job.highlights && job.highlights.length > 0" :highlights="job.highlights" />
+
+        <div v-if="job.keywords && Array.isArray(job.keywords) && job.keywords.length > 0" class="flex flex-wrap gap-2">
+            <span v-for="(keyword, keywordIndex) in job.keywords" :key="keywordIndex"
+                class="px-3 py-1 rounded-lg dark:bg-white/10 bg-black/10 dark:border-white/20 border-gray-300/30 text-sm dark:text-gray-200 text-gray-700 font-medium backdrop-blur-sm transition-all duration-300 hover:scale-105">
+                {{ keyword }}
+            </span>
+        </div>
     </div>
 </template>
 

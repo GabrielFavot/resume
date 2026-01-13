@@ -3,7 +3,7 @@
         "name": "Gabriel Favot",
         "label": "Fullstack Engineer",
         "email": "gabriel@favot.fr",
-        "phone": "0619984256",
+        "phone": "+33 6 19 98 42 56",
         "url": "https://gab.pm",
         "summary": "Fullstack Engineer with over 6 years of experience building scalable products in fast-growing startups. Passionate about building products that are easy to use and maintain.",
         "location": {
@@ -47,7 +47,7 @@
             ]
         },
         {
-            "institution": "University of Staffordshire",
+            "institution": "Staffordshire University",
             "area": "Computer Science",
             "url": "https://www.staffs.ac.uk/",
             "studyType": "Bachelor's degree",
@@ -64,13 +64,21 @@
             "location": "Paris, France",
             "startDate": "2022-09-01",
             "endDate": "2025-05-31",
-            "summary": "Fullstack engineer on a SaaS management platform using a modern TypeScript stack.",
+            "summary": "Fullstack engineer on a SaaS governance platform using a modern TypeScript stack.",
             "highlights": [
-                "Built and maintained scalable backend services with NestJS (TypeScript, PostgreSQL, Redis) and modern frontend features using Nuxt 3.",
-                "Developed a high-performance web extension distributed to 100,000+ users, with strong constraints on data retrieval efficiency.",
+                "Built and maintained backend services with NestJS (TypeScript, PostgreSQL, Redis) and modern frontend features using Nuxt 3.",
+                "Developed a web extension distributed to 100,000+ users, with strong constraints on scalability.",
                 "Implemented Hexagonal Architecture principles across several projects to improve code decoupling and testability.",
-                "Drove the adoption of AI-assisted development tools within the team, from early GitHub Copilot integration to migrating to Cursor.",
+                "Drove the adoption of AI-assisted development tools within the team, from early GitHub Copilot integration to migrating to newer AI-driven dev tools.",
                 "Maintained CI/CD pipelines and deployed new services on GCP and Kubernetes clusters."
+            ],
+            "keywords": [
+                "NestJS",
+                "Nuxt",
+                "TypeScript",
+                "PostgreSQL",
+                "Redis",
+                "GCP"
             ]
         },
         {
@@ -80,11 +88,16 @@
             "location": "Paris, France",
             "startDate": "2019-07-01",
             "endDate": "2022-08-31",
-            "summary": "Core contributor to a professional online banking platform and white-label ecosystem.",
+            "summary": "Web developer on a professional online banking platform and white-label ecosystem.",
             "highlights": [
                 "Contributed to the development of a large-scale B2B professional banking solution.",
                 "Held full ownership of 2 white-label projects: managed direct client relationships (from requirements gathering to feedback), technical implementation, and final delivery.",
                 "Led a team of 3 developers, conducting code reviews and mentoring on best practices."
+            ],
+            "keywords": [
+                "PHP",
+                "Yii Framework 2",
+                "Mssql"
             ]
         },
         {
@@ -98,6 +111,11 @@
                 "Developed and maintained an internal web application for operational teams",
                 "Built reusable UI components and integrated REST APIs",
                 "Worked in a small agile team with direct stakeholder interaction"
+            ],
+            "keywords": [
+                "Angular",
+                "TypeScript",
+                "REST API"
             ]
         }
     ],
@@ -108,47 +126,31 @@
             "endDate": "2025-12-31",
             "description": "End-to-end renovation of a residential property.",
             "highlights": [
-                "Planned and executed a complete renovation, including bathroom remodeling and electrical system upgrades.",
-                "Learned to manage budgets, timelines, and handle unexpected issues along the way.",
-                "Demonstrated strong hands-on 'maker' skills and attention to detail."
+                "Planned and executed a complete renovation, including bathroom remodeling and electrical system upgrades."
             ]
         },
         {
             "name": "Personal Home Server & Homelab",
             "description": "Self-hosted infrastructure managing home automation and private cloud services.",
             "highlights": [
-                "Architected a home server hosting multiple open-source services and custom micro-apps using Docker.",
-                "Developed a custom Instagram scraping tool to automatically extract and centralize cooking recipes.",
-                "Implemented home automation systems to monitor and control domestic infrastructure."
+                "Architected a home server (proxmox) hosting multiple open-source services and custom micro-apps via Docker.",
+                "Developed several applications and workflows for private use (web scraping, automation, etc.). Including https://cv.gab.pm.",
+                "Maintained the infrastructure and hosted services."
             ],
             "keywords": [
+                "proxmox",
                 "Self-hosting",
                 "Docker",
-                "Home Automation",
-                "Web Scraping",
+                "Workflows",
                 "Infrastructure"
             ]
         },
         {
-            "name": "Resume hosting",
-            "url": "https://cv.gab.pm",
-            "description": "The web application hosting my resume",
-            "highlights": [
-                "Built a web app to display my resume writen in a specifc JSON format in order to be easily editable and readable by machines.",
-                "Hosted on a personal domain using a self-hosted infrastructure."
-            ],
-            "keywords": [
-                "Nuxt 4",
-                "JSON Resume",
-                "Self-hosting"
-            ]
-        },
-        {
-            "name": "Sound Kiffeur",
+            "name": "Spotify Listening History",
             "url": "https://sound.kiffeur.fr",
             "description": "A personal project developed to visualize Spotify listening history and real-time playback through a dynamic and immersive interface.",
             "highlights": [
-                "Built with Nuxt 3 and integrated Spotify Web API to fetch and process real-time user playback and historical data.",
+                "Built with Nuxt 3 and integrated Spotify Web API to fetch and process real-time listening data and history.",
                 "Experimented with modern frontend techniques to ensure smooth, high-performance visual rendering."
             ],
             "keywords": [

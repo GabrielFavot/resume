@@ -17,17 +17,14 @@
             <ResumeSection v-if="hasWork">
               <ResumeWork />
             </ResumeSection>
-            <ResumeSection v-if="hasEducation">
-              <ResumeEducation />
-            </ResumeSection>
           </div>
 
           <div class="space-y-4 sm:space-y-6">
             <ResumeSection v-if="hasProjects">
               <ResumeProjects />
             </ResumeSection>
-            <ResumeSection v-if="hasSkills">
-              <ResumeSkills />
+            <ResumeSection v-if="hasEducation">
+              <ResumeEducation />
             </ResumeSection>
           </div>
         </div>
@@ -40,7 +37,7 @@
 import { computed } from 'vue'
 import { useResume } from '~/composables/useResume'
 
-const { basics, work, education, skills, projects, languages } = await useResume()
+const { basics, work, education, projects, languages } = await useResume()
 
 const firstProfileUrl = computed(() => {
   return basics.value?.profiles?.[0]?.url
@@ -57,7 +54,6 @@ useHead(() => ({
 
 const hasWork = computed(() => work.value.length > 0)
 const hasEducation = computed(() => education.value.length > 0)
-const hasSkills = computed(() => skills.value.length > 0)
 const hasProjects = computed(() => projects.value.length > 0)
 const hasLanguages = computed(() => languages.value.length > 0)
 </script>

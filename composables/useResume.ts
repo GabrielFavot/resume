@@ -1,4 +1,4 @@
-import { computed } from 'vue'
+import { computed, ref, watch } from 'vue'
 import type { ResumeSchema } from '@kurone-kito/jsonresume-types'
 
 const SUPPORTED_LOCALES = ['en', 'fr']
@@ -9,24 +9,35 @@ export const useResume = async () => {
     const { locale } = useI18n()
     const config = useRuntimeConfig()
 
-    const currentLocale = locale.value || config.public.resumeDefaultLang
-    const resumeLocale = SUPPORTED_LOCALES.includes(currentLocale) ? currentLocale : config.public.resumeDefaultLang || 'en'
+    const data = ref<Resume | null>(null)
 
-    const resumePath = `/resume/resume_${resumeLocale}.json`
+    const loadResume = async () => {
+        const currentLocale = locale.value || config.public.resumeDefaultLang
+        const resumeLocale = SUPPORTED_LOCALES.includes(currentLocale) ? currentLocale : config.public.resumeDefaultLang || 'en'
+        const resumePath = `/resume/resume_${resumeLocale}.json`
 
-    const data = await $fetch<Resume>(resumePath)
+        const loadedData = await $fetch<Resume>(resumePath)
 
-    if (!data) {
-        throw new Error(`Failed to load resume data from ${resumePath}`)
+        if (!loadedData) {
+            throw new Error(`Failed to load resume data from ${resumePath}`)
+        }
+
+        data.value = loadedData
     }
 
+    await loadResume()
+
+    watch(locale, () => {
+        loadResume()
+    })
+
     return {
-        resume: computed(() => data),
-        basics: computed(() => data.basics),
-        work: computed(() => data.work || []),
-        education: computed(() => data.education || []),
-        skills: computed(() => data.skills || []),
-        projects: computed(() => data.projects || []),
-        languages: computed(() => data.languages || [])
+        resume: computed(() => data.value!),
+        basics: computed(() => data.value?.basics),
+        work: computed(() => data.value?.work || []),
+        education: computed(() => data.value?.education || []),
+        skills: computed(() => data.value?.skills || []),
+        projects: computed(() => data.value?.projects || []),
+        languages: computed(() => data.value?.languages || [])
     }
 }
