@@ -5,7 +5,8 @@ export default defineNuxtConfig({
   modules: [
     '@nuxtjs/tailwindcss',
     '@nuxtjs/color-mode',
-    '@nuxt/icon'
+    '@nuxt/icon',
+    '@nuxtjs/i18n'
   ],
   colorMode: {
     preference: 'dark',
@@ -19,7 +20,16 @@ export default defineNuxtConfig({
   },
   runtimeConfig: {
     public: {
-      logoDevApiKey: ''
+      logoDevApiKey: '',
+      resumeDefaultLang: process.env.RESUME_DEFAULT_LANG || 'en'
     }
+  },
+  i18n: {
+    locales: [
+      { code: 'en', language: 'en-US', file: 'en.json' },
+      { code: 'fr', language: 'fr-FR', file: 'fr.json' }
+    ],
+    defaultLocale: 'en',
+    strategy: 'no_prefix'
   }
 })

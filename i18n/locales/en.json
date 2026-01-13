@@ -1,0 +1,12 @@
+{
+  "experience": "Experience",
+  "projects": "Projects",
+  "education": "Education",
+  "skills": "Skills",
+  "languages": "Languages",
+  "present": "Present",
+  "duration": {
+    "year": "{n} year | {n} years",
+    "month": "{n} month | {n} months"
+  }
+}

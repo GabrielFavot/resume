@@ -12,9 +12,13 @@
   "dependencies": {
     "@jsonresume/schema": "^1.2.1",
     "@nuxt/icon": "^2.2.0",
+    "@nuxt/ui": "^4.3.0",
     "@nuxtjs/color-mode": "^4.0.0",
+    "@nuxtjs/i18n": "^10.2.1",
     "jspdf": "^2.5.2",
-    "nuxt": "^4.2.2"
+    "luxon": "^3.7.2",
+    "nuxt": "^4.2.2",
+    "typescript": "^5.9.3"
   },
   "devDependencies": {
     "@kurone-kito/jsonresume-types": "^0.4.0",
