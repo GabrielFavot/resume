@@ -1,6 +1,5 @@
 ![Nuxt](https://img.shields.io/badge/Nuxt-4.2.2-00DC82?logo=nuxt.js&logoColor=white)
 ![TypeScript](https://img.shields.io/badge/TypeScript-5.9.3-3178C6?logo=typescript&logoColor=white)
-![License](https://img.shields.io/badge/License-MIT-yellow.svg)
 ![GitHub](https://img.shields.io/github/stars/GabrielFavot/resume?style=social)
 
 Nuxt 4 application to display an interactive resume based on the [JSON Resume](https://jsonresume.org) schema.
@@ -53,7 +52,3 @@ Assets like profile pictures and company logos are automatically fetched via [lo
 ```bash
 docker-compose up
 ```
-
-## 📄 License
-
-This project is open source and available under the [MIT License](LICENSE).
