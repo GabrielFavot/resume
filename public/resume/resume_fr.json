@@ -122,8 +122,6 @@
     "projects": [
         {
             "name": "Rénovation d'un logement",
-            "startDate": "2025-06-01",
-            "endDate": "2025-12-31",
             "description": "Rénovation de bout en bout d'un appartement.",
             "highlights": [
                 "Rénovation complète du logement, incluant les sols, la plomberie, l'électricité, la peinture, etc.",
