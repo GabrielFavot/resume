@@ -38,7 +38,7 @@ RUN npm run build
 RUN npm run generate:pdf
 
 # Copy generated PDFs into the static output (Nuxt serves from .output/public at runtime)
-RUN cp -r /app/public/resume /app/.output/public/resume
+RUN cp /app/public/resume/*.pdf /app/.output/public/resume/
 
 # Stage runner (lightweight, no Chromium needed)
 FROM base AS runner
