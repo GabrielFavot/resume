@@ -2,71 +2,81 @@
 
 import 'dotenv/config';
 import puppeteer from 'puppeteer';
-import fs from 'fs';
-import path from 'path';
 import { spawn } from 'child_process';
+import path from 'path';
+import fs from 'fs';
 
-const RESUME_DIR = path.join(process.cwd(), 'public', 'resume');
-const THEME_DIR = path.join(process.cwd(), 'packages', 'jsonresume-theme-gab');
 const LOCALES = ['en', 'fr'];
+const PORT = 3099;
+const BASE_URL = `http://localhost:${PORT}`;
+const RESUME_DIR = path.join(process.cwd(), 'public', 'resume');
+const SERVER_ENTRY = path.join(process.cwd(), '.output', 'server', 'index.mjs');
 
 const PDF_CONFIG = {
   format: 'A4',
   printBackground: true,
   margin: {
-    top: '8mm',
-    right: '8mm',
-    bottom: '8mm',
-    left: '8mm'
+    top: '10mm',
+    right: '10mm',
+    bottom: '10mm',
+    left: '10mm'
   }
 };
 
-async function buildTheme() {
-  console.log('🔨 Building theme...');
-  
+async function buildNuxt() {
+  console.log('🔨 Building Nuxt app...');
+
   return new Promise((resolve, reject) => {
-    const build = spawn('npm', ['run', 'build'], {
-      cwd: THEME_DIR,
-      stdio: 'inherit'
-    });
-    
-    build.on('close', (code) => {
-      if (code === 0) {
-        console.log('✓ Theme built successfully');
-        resolve();
-      } else {
-        reject(new Error(`Theme build failed with code ${code}`));
+    const build = spawn('npx', ['nuxt', 'build'], {
+      stdio: 'inherit',
+      env: {
+        ...process.env,
+        NUXT_PUBLIC_LOGO_DEV_API_KEY: process.env.LOGO_DEV_API_KEY
       }
     });
-    
+    build.on('close', (code) => code === 0 ? resolve() : reject(new Error(`Nuxt build failed with code ${code}`)));
     build.on('error', reject);
   });
 }
 
+async function startServer() {
+  console.log('🚀 Starting server...');
+
+  const server = spawn('node', [SERVER_ENTRY], {
+    env: {
+      ...process.env,
+      PORT: String(PORT),
+      HOST: '127.0.0.1',
+      NUXT_PUBLIC_LOGO_DEV_API_KEY: process.env.LOGO_DEV_API_KEY
+    },
+    stdio: ['ignore', 'pipe', 'pipe']
+  });
+
+  await new Promise((resolve, reject) => {
+    const timeout = setTimeout(resolve, 6000);
+
+    server.stdout.on('data', (data) => {
+      const text = data.toString();
+      if (text.includes('Listening') || text.includes('localhost') || text.includes(String(PORT))) {
+        clearTimeout(timeout);
+        resolve();
+      }
+    });
+
+    server.on('error', (err) => {
+      clearTimeout(timeout);
+      reject(err);
+    });
+  });
+
+  console.log('✓ Server ready');
+  return server;
+}
+
 async function generatePDF(locale) {
-  const resumePath = path.join(RESUME_DIR, `resume_${locale}.json`);
   const outputPath = path.join(RESUME_DIR, `resume_${locale}.pdf`);
-
   console.log(`\n📄 Generating PDF for ${locale.toUpperCase()}...`);
-  console.log(`   Input: ${resumePath}`);
-  console.log(`   Output: ${outputPath}`);
 
-  // Read resume JSON
-  const resume = JSON.parse(fs.readFileSync(resumePath, 'utf8'));
-  
-  // Inject logo.dev API key into meta
-  resume.meta = {
-    ...(resume.meta || {}),
-    logoDevKey: process.env.LOGO_DEV_API_KEY
-  };
-  
-  // Import built theme
-  const { render } = await import(path.join(THEME_DIR, 'dist', 'index.js'));
-  
-  // Generate HTML using theme
-  const html = render(resume);
-  
-  // Launch browser and generate PDF
   const browser = await puppeteer.launch({
     headless: true,
     executablePath: process.env.PUPPETEER_EXECUTABLE_PATH || undefined,
@@ -75,20 +85,21 @@ async function generatePDF(locale) {
 
   try {
     const page = await browser.newPage();
-    await page.setContent(html, { waitUntil: 'networkidle2' });
-    
-    // Wait for images to load
+    // A4 at 96 DPI = 794 × 1123 px
+    await page.setViewport({ width: 794, height: 1123 });
+    await page.goto(`${BASE_URL}/print/${locale}`, { waitUntil: 'networkidle2', timeout: 30000 });
+
     await page.evaluate(async () => {
       const images = Array.from(document.querySelectorAll('img'));
       await Promise.all(images.map(img => {
         if (img.complete) return Promise.resolve();
-        return new Promise((resolve, reject) => {
+        return new Promise((resolve) => {
           img.addEventListener('load', resolve);
-          img.addEventListener('error', resolve); // Don't reject on error
+          img.addEventListener('error', resolve);
         });
       }));
     });
-    
+
     await page.pdf({ ...PDF_CONFIG, path: outputPath });
     console.log(`✓ Generated ${outputPath}`);
   } finally {
@@ -99,11 +110,12 @@ async function generatePDF(locale) {
 async function main() {
   console.log('🚀 Starting PDF generation...\n');
 
+  let server = null;
+
   try {
-    // Build theme first
-    await buildTheme();
-    
-    // Generate PDFs for all locales
+    await buildNuxt();
+    server = await startServer();
+
     for (const locale of LOCALES) {
       await generatePDF(locale);
     }
@@ -117,6 +129,11 @@ async function main() {
     console.error('\n❌ Error generating PDFs:', error.message);
     console.error(error.stack);
     process.exit(1);
+  } finally {
+    if (server) {
+      server.kill();
+      console.log('🛑 Server stopped');
+    }
   }
 }
 

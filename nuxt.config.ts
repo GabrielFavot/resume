@@ -8,6 +8,11 @@ export default defineNuxtConfig({
     '@nuxt/icon',
     '@nuxtjs/i18n'
   ],
+  icon: {
+    clientBundle: {
+      scan: true
+    }
+  },
   colorMode: {
     preference: 'light',
     fallback: 'light',
