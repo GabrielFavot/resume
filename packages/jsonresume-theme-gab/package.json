@@ -1,0 +1,38 @@
+{
+  "name": "jsonresume-theme-gab",
+  "version": "1.0.0",
+  "description": "Clean and professional JSON Resume theme",
+  "main": "./dist/index.js",
+  "type": "module",
+  "license": "MIT",
+  "keywords": [
+    "jsonresume",
+    "theme",
+    "resume",
+    "cv"
+  ],
+  "peerDependencies": {
+    "react": "^18.0.0 || ^19.0.0",
+    "react-dom": "^18.0.0 || ^19.0.0"
+  },
+  "dependencies": {
+    "styled-components": "^6.1.8"
+  },
+  "scripts": {
+    "build": "vite build"
+  },
+  "exports": {
+    ".": {
+      "import": "./src/index.jsx",
+      "default": "./dist/index.js"
+    },
+    "./dist": {
+      "import": "./dist/index.js",
+      "default": "./dist/index.js"
+    }
+  },
+  "devDependencies": {
+    "@vitejs/plugin-react": "^4.2.1",
+    "vite": "^5.0.0"
+  }
+}

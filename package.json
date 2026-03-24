@@ -7,7 +7,9 @@
     "dev": "nuxt dev",
     "generate": "nuxt generate",
     "preview": "nuxt preview",
-    "postinstall": "nuxt prepare"
+    "generate:pdf": "node scripts/generate-pdf.js",
+    "postinstall": "nuxt prepare",
+    "build:theme": "cd packages/jsonresume-theme-gab && npm run build"
   },
   "dependencies": {
     "@jsonresume/schema": "^1.2.1",
@@ -21,7 +23,13 @@
   },
   "devDependencies": {
     "@kurone-kito/jsonresume-types": "^0.4.0",
-    "@nuxtjs/tailwindcss": "^6.12.0",
-    "tailwindcss": "^4.2.2"
+    "@nuxtjs/tailwindcss": "^6.14.0",
+    "dotenv": "^17.3.1",
+    "puppeteer": "^24.40.0",
+    "react": "^18.3.1",
+    "react-dom": "^18.3.1",
+    "resumed": "^6.1.0",
+    "tailwindcss": "^3.4.19",
+    "tsx": "^4.21.0"
   }
 }
