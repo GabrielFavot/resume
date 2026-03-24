@@ -37,11 +37,13 @@ RUN npm run build
 # Generate PDFs (requires the built app)
 RUN npm run generate:pdf
 
+# Copy generated PDFs into the static output (Nuxt serves from .output/public at runtime)
+RUN cp -r /app/public/resume /app/.output/public/resume
+
 # Stage runner (lightweight, no Chromium needed)
 FROM base AS runner
 WORKDIR /app
 ENV NODE_ENV=production
 COPY --from=builder /app/.output ./.output
-COPY --from=builder /app/public ./public
 EXPOSE 3000
 CMD ["node", ".output/server/index.mjs"]
