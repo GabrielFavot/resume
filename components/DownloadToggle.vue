@@ -3,7 +3,7 @@
         <button @click.stop="isOpen = !isOpen"
             class="p-2.5 sm:p-3 rounded-xl backdrop-blur-xl bg-white/10 dark:bg-black/20 border border-white/20 dark:border-white/10 hover:bg-white/20 dark:hover:bg-black/30 transition-all duration-300 hover:scale-105"
             aria-label="Download PDF">
-            <UIcon name="i-heroicons-arrow-down-tray" class="w-4 h-4 text-gray-700 dark:text-gray-200" />
+            <Icon name="mdi:download" class="w-5 h-5 text-gray-700 dark:text-gray-200" />
         </button>
 
         <div v-if="isOpen"
@@ -11,7 +11,7 @@
             <a v-for="option in options" :key="option.locale" :href="option.href" download
                 @click="isOpen = false"
                 class="w-full px-4 py-3 flex items-center gap-3 hover:bg-white/20 dark:hover:bg-black/30 transition-colors duration-200">
-                <UIcon name="i-heroicons-document-text" class="w-4 h-4 text-gray-700 dark:text-gray-200" />
+                <Icon name="mdi:file-pdf-box" class="w-4 h-4 text-gray-700 dark:text-gray-200" />
                 <span class="text-sm font-medium text-gray-700 dark:text-gray-200">
                     PDF ({{ option.label }})
                 </span>

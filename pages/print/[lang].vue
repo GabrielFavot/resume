@@ -147,6 +147,7 @@
 
 <script setup lang="ts">
 import { computed, reactive, ref } from 'vue'
+import { buildLogoUrl } from '~/composables/useLogoFromUrl'
 
 const route = useRoute()
 const lang = route.params.lang as string
@@ -167,13 +168,7 @@ const logoDevKey = computed(() => config.public.logoDevApiKey)
 const logoErrors = reactive(new Set<string>())
 
 function getLogoUrl(url?: string): string | null {
-  if (!url || !logoDevKey.value) return null
-  try {
-    const domain = new URL(url).hostname.replace('www.', '')
-    return `https://img.logo.dev/${domain}?token=${logoDevKey.value}`
-  } catch {
-    return null
-  }
+  return buildLogoUrl(url, logoDevKey.value)
 }
 
 // ── Profile icons ─────────────────────────────────────────────────
