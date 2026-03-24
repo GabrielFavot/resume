@@ -8,9 +8,14 @@ export default defineNuxtConfig({
     '@nuxt/icon',
     '@nuxtjs/i18n'
   ],
+  icon: {
+    clientBundle: {
+      scan: true
+    }
+  },
   colorMode: {
-    preference: 'dark',
-    fallback: 'dark',
+    preference: 'light',
+    fallback: 'light',
     classSuffix: ''
   },
   css: ['~/assets/css/main.css'],
