@@ -123,14 +123,20 @@
                     class="logo"
                     @error="logoErrors.add(edu.url ?? '')"
                   />
-                  <h3>{{ edu.institution }}</h3>
+                  <div>
+                    <h3>{{ edu.institution }}</h3>
+                    <span v-if="edu.area" class="secondary">{{ edu.area }}</span>
+                    <span v-if="edu.studyType" class="secondary">{{ edu.studyType }}</span>
+                  </div>
                 </div>
-                <span class="secondary">
-                  {{ [edu.studyType, edu.area].filter(Boolean).join(' · ') }}
-                </span>
               </div>
               <div class="meta">{{ formatDateRange(edu.startDate, edu.endDate) }}</div>
             </div>
+            <ul v-if="edu.courses?.length">
+              <li v-for="course in edu.courses" :key="course">
+                <Icon name="mdi:circle-small" class="li-icon" />{{ course }}
+              </li>
+            </ul>
           </div>
         </section>
       </div>
@@ -206,7 +212,6 @@ function formatDateRange(startDate?: string, endDate?: string): string {
 .header {
   padding-bottom: 12px;
   margin-bottom: 14px;
-  border-bottom: 1.5px solid #d1d5db;
 }
 
 .header-top {
