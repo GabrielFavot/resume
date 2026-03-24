@@ -19,6 +19,8 @@ RUN apk add --no-cache \
     ca-certificates \
     ttf-freefont
 
+ENV PUPPETEER_EXECUTABLE_PATH=/usr/bin/chromium-browser
+
 WORKDIR /app
 COPY --from=deps /app/node_modules ./node_modules
 COPY . .

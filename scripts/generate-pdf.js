@@ -4,7 +4,6 @@ import 'dotenv/config';
 import puppeteer from 'puppeteer';
 import { spawn } from 'child_process';
 import path from 'path';
-import fs from 'fs';
 
 const LOCALES = ['en', 'fr'];
 const PORT = 3099;
@@ -29,10 +28,7 @@ async function buildNuxt() {
   return new Promise((resolve, reject) => {
     const build = spawn('npx', ['nuxt', 'build'], {
       stdio: 'inherit',
-      env: {
-        ...process.env,
-        NUXT_PUBLIC_LOGO_DEV_API_KEY: process.env.LOGO_DEV_API_KEY
-      }
+      env: process.env
     });
     build.on('close', (code) => code === 0 ? resolve() : reject(new Error(`Nuxt build failed with code ${code}`)));
     build.on('error', reject);
@@ -46,8 +42,7 @@ async function startServer() {
     env: {
       ...process.env,
       PORT: String(PORT),
-      HOST: '127.0.0.1',
-      NUXT_PUBLIC_LOGO_DEV_API_KEY: process.env.LOGO_DEV_API_KEY
+      HOST: '127.0.0.1'
     },
     stdio: ['ignore', 'pipe', 'pipe']
   });
@@ -79,7 +74,7 @@ async function generatePDF(locale) {
 
   const browser = await puppeteer.launch({
     headless: true,
-    executablePath: process.env.PUPPETEER_EXECUTABLE_PATH || undefined,
+    executablePath: process.env.PUPPETEER_EXECUTABLE_PATH,
     args: ['--no-sandbox', '--disable-setuid-sandbox']
   });
 
@@ -108,6 +103,10 @@ async function generatePDF(locale) {
 }
 
 async function main() {
+  if (!process.env.NUXT_PUBLIC_LOGO_DEV_API_KEY) {
+    console.warn('⚠️  NUXT_PUBLIC_LOGO_DEV_API_KEY is not set — logos may not appear in the generated PDFs.');
+  }
+
   console.log('🚀 Starting PDF generation...\n');
 
   let server = null;
