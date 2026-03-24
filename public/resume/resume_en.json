@@ -5,7 +5,7 @@
         "email": "gabriel@favot.fr",
         "phone": "+33 6 19 98 42 56",
         "url": "https://gab.pm",
-        "summary": "Fullstack Engineer with over 6 years of experience building scalable products in fast-growing startups. Passionate about building products that are easy to use and maintain.",
+        "summary": "Fullstack Engineer with over 6 years of experience building scalable products in fast-growing startups.",
         "location": {
             "city": "Paris",
             "country": "France"
@@ -108,7 +108,6 @@
             "endDate": "2018-08-01",
             "summary": "Frontend development on an internal operational tool using Angular and TypeScript.",
             "highlights": [
-                "Developed and maintained an internal web application for operational teams",
                 "Built reusable UI components and integrated REST APIs",
                 "Worked in a small agile team with direct stakeholder interaction"
             ],
@@ -122,6 +121,8 @@
     "projects": [
         {
             "name": "Apartment Full Renovation",
+            "startDate": "2025-06",
+            "endDate": "2025-12",
             "description": "End-to-end renovation of a residential property.",
             "highlights": [
                 "Planned and executed a complete renovation, including bathroom remodeling and electrical system upgrades."
@@ -146,10 +147,9 @@
         {
             "name": "Spotify Listening History",
             "url": "https://sound.kiffeur.fr",
-            "description": "A personal project developed to visualize Spotify listening history and real-time playback through a dynamic and immersive interface.",
+            "description": "A personal proof of concept developed to visualize Spotify listening history and real-time playback through a dynamic and immersive interface.",
             "highlights": [
-                "Built with Nuxt 3 and integrated Spotify Web API to fetch and process real-time listening data and history.",
-                "Experimented with modern frontend techniques to ensure smooth, high-performance visual rendering."
+                "Built with Nuxt 3 and integrated Spotify Web API to fetch and process real-time listening data and history."
             ],
             "keywords": [
                 "Nuxt 3",

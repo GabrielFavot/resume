@@ -5,7 +5,7 @@
         "email": "gabriel@favot.fr",
         "phone": "+33 6 19 98 42 56",
         "url": "https://gab.pm",
-        "summary": "Fullstack Engineer avec plus de 6 ans d'expérience dans la création de produits scalables au sein de startups early-stage. Passionné par le développement de produits intuitifs, faciles à utiliser et à maintenir.",
+        "summary": "Fullstack Engineer avec plus de 6 ans d'expérience dans la création de produits scalables au sein de startups early-stage.",
         "location": {
             "city": "Paris",
             "country": "France"
@@ -91,7 +91,7 @@
             "summary": "Contributeur core sur une plateforme de banque en ligne professionnelle et son écosystème en marque blanche.",
             "highlights": [
                 "Contribution au développement d'une solution bancaire B2B à grande échelle.",
-                "Ownership complet de 2 projets en marque blanche : gestion de la relation client directe (du recueil de besoins au feedback), implémentation technique et livraison finale.",
+                "Ownership complet de 2 projets en marque blanche : gestion de la relation client directe, implémentation technique et livraison finale.",
                 "Lead d'une équipe de 3 développeurs : formation de junior, mentoring sur les bonnes pratiques et code reviews."
             ],
             "keywords": [
@@ -108,7 +108,6 @@
             "endDate": "2018-08-01",
             "summary": "Développement front-end sur un outil opérationnel de plannification des vols utilisant Angular et TypeScript.",
             "highlights": [
-                "Développement et maintenance d'une application web interne pour les équipes opérationnelles.",
                 "Création de composants UI réutilisables et intégration d'API REST.",
                 "Travail en petite équipe agile avec des interactions directes avec les stakeholders."
             ],
@@ -122,6 +121,8 @@
     "projects": [
         {
             "name": "Rénovation d'un logement",
+            "startDate": "2025-06",
+            "endDate": "2025-12",
             "description": "Rénovation de bout en bout d'un appartement.",
             "highlights": [
                 "Rénovation complète du logement, incluant les sols, la plomberie, l'électricité, la peinture, etc.",
@@ -147,10 +148,9 @@
         {
             "name": "Spotify Listening History",
             "url": "https://sound.kiffeur.fr",
-            "description": "Projet personnel développé pour visualiser l'historique d'écoute Spotify et la lecture en temps réel via une interface dynamique et immersive.",
+            "description": "POC personnel développé pour visualiser l'historique d'écoute Spotify et la lecture en temps réel",
             "highlights": [
-                "Développé en Nuxt 3 et intégration de l'API Spotify Web pour récupérer et traiter les données d'écoute en temps réel et l'historique.",
-                "Expérimentation de techniques frontend modernes pour assurer un rendu visuel fluide et performant."
+                "Développé en Nuxt 3 et intégration de l'API Spotify Web pour récupérer et traiter les données d'écoute en temps réel et l'historique."
             ],
             "keywords": [
                 "Nuxt 3",
