@@ -146,7 +146,7 @@
         },
         {
             "name": "Spotify Listening History",
-            "url": "https://sound.kiffeur.fr",
+            "url": "https://sound.gab.pm",
             "description": "A personal proof of concept developed to visualize Spotify listening history and real-time playback through a dynamic and immersive interface.",
             "highlights": [
                 "Built with Nuxt 3 and integrated Spotify Web API to fetch and process real-time listening data and history."

@@ -147,7 +147,7 @@
         },
         {
             "name": "Spotify Listening History",
-            "url": "https://sound.kiffeur.fr",
+            "url": "https://sound.gab.pm",
             "description": "POC personnel développé pour visualiser l'historique d'écoute Spotify et la lecture en temps réel",
             "highlights": [
                 "Développé en Nuxt 3 et intégration de l'API Spotify Web pour récupérer et traiter les données d'écoute en temps réel et l'historique."
