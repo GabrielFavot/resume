@@ -42,10 +42,9 @@
       </div>
     </header>
 
-    <!-- ── Body: 2 columns ────────────────────────────────────── -->
+    <!-- ── Body: single column (linear reading order for ATS) ──── -->
     <div class="body">
 
-      <!-- Left — Work -->
       <section v-if="work.length">
         <h2>{{ $t('experience') }}</h2>
         <div v-for="job in work" :key="`${job.name}-${job.startDate}`" class="item">
@@ -84,62 +83,59 @@
         </div>
       </section>
 
-      <!-- Right — Projects + Education -->
-      <div>
-        <section v-if="projects.length">
-          <h2>{{ $t('projects') }}</h2>
-          <div v-for="proj in projects" :key="proj.name" class="item">
-            <div class="item-header">
-              <div class="item-title">
-                <h3>{{ proj.name }}</h3>
-                <a v-if="proj.url" :href="proj.url" class="secondary link">{{ proj.url }}</a>
-              </div>
-              <div v-if="proj.startDate || proj.endDate" class="meta">
-                {{ formatDateRange(proj.startDate, proj.endDate) }}
-              </div>
+      <section v-if="projects.length">
+        <h2>{{ $t('projects') }}</h2>
+        <div v-for="proj in projects" :key="proj.name" class="item">
+          <div class="item-header">
+            <div class="item-title">
+              <h3>{{ proj.name }}</h3>
+              <a v-if="proj.url" :href="proj.url" class="secondary link">{{ proj.url }}</a>
             </div>
-            <p v-if="proj.description" class="text">{{ proj.description }}</p>
-            <ul v-if="proj.highlights?.length">
-              <li v-for="(h, i) in proj.highlights" :key="i">
-                <Icon name="mdi:circle-small" class="li-icon" />{{ h }}
-              </li>
-            </ul>
-            <div v-if="proj.keywords?.length" class="tags">
-              <span v-for="kw in proj.keywords" :key="kw" class="tag">{{ kw }}</span>
+            <div v-if="proj.startDate || proj.endDate" class="meta">
+              {{ formatDateRange(proj.startDate, proj.endDate) }}
             </div>
           </div>
-        </section>
+          <p v-if="proj.description" class="text">{{ proj.description }}</p>
+          <ul v-if="proj.highlights?.length">
+            <li v-for="(h, i) in proj.highlights" :key="i">
+              <Icon name="mdi:circle-small" class="li-icon" />{{ h }}
+            </li>
+          </ul>
+          <div v-if="proj.keywords?.length" class="tags">
+            <span v-for="kw in proj.keywords" :key="kw" class="tag">{{ kw }}</span>
+          </div>
+        </div>
+      </section>
 
-        <section v-if="education.length">
-          <h2>{{ $t('education') }}</h2>
-          <div v-for="edu in education" :key="`${edu.institution}-${edu.startDate}`" class="item">
-            <div class="item-header">
-              <div class="item-title">
-                <div class="company-row">
-                  <img
-                    v-if="getLogoUrl(edu.url) && !logoErrors.has(edu.url ?? '')"
-                    :src="getLogoUrl(edu.url)!"
-                    :alt="edu.institution"
-                    class="logo"
-                    @error="logoErrors.add(edu.url ?? '')"
-                  />
-                  <div>
-                    <h3>{{ edu.institution }}</h3>
-                    <span v-if="edu.area" class="secondary">{{ edu.area }}</span>
-                    <span v-if="edu.studyType" class="secondary">{{ edu.studyType }}</span>
-                  </div>
+      <section v-if="education.length">
+        <h2>{{ $t('education') }}</h2>
+        <div v-for="edu in education" :key="`${edu.institution}-${edu.startDate}`" class="item">
+          <div class="item-header">
+            <div class="item-title">
+              <div class="company-row">
+                <img
+                  v-if="getLogoUrl(edu.url) && !logoErrors.has(edu.url ?? '')"
+                  :src="getLogoUrl(edu.url)!"
+                  :alt="edu.institution"
+                  class="logo"
+                  @error="logoErrors.add(edu.url ?? '')"
+                />
+                <div>
+                  <h3>{{ edu.institution }}</h3>
+                  <span v-if="edu.area" class="secondary">{{ edu.area }}</span>
+                  <span v-if="edu.studyType" class="secondary">{{ edu.studyType }}</span>
                 </div>
               </div>
-              <div class="meta">{{ formatDateRange(edu.startDate, edu.endDate) }}</div>
             </div>
-            <ul v-if="edu.courses?.length">
-              <li v-for="course in edu.courses" :key="course">
-                <Icon name="mdi:circle-small" class="li-icon" />{{ course }}
-              </li>
-            </ul>
+            <div class="meta">{{ formatDateRange(edu.startDate, edu.endDate) }}</div>
           </div>
-        </section>
-      </div>
+          <ul v-if="edu.courses?.length">
+            <li v-for="course in edu.courses" :key="course">
+              <Icon name="mdi:circle-small" class="li-icon" />{{ course }}
+            </li>
+          </ul>
+        </div>
+      </section>
 
     </div>
   </div>
@@ -287,10 +283,7 @@ function formatDateRange(startDate?: string, endDate?: string): string {
 
 /* ── Body ── */
 .body {
-  display: grid;
-  grid-template-columns: 1fr 1fr;
-  gap: 32px;
-  align-items: start;
+  display: block;
 }
 
 /* ── Section ── */

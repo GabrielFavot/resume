@@ -2,7 +2,7 @@
 
 import 'dotenv/config';
 import puppeteer from 'puppeteer';
-import { spawn } from 'child_process';
+import { spawn, execFileSync } from 'child_process';
 import path from 'path';
 
 const LOCALES = ['en', 'fr'];
@@ -100,12 +100,30 @@ async function generatePDF(locale) {
   } finally {
     await browser.close();
   }
+
+  return outputPath;
+}
+
+function printAtsExtraction(outputPath) {
+  console.log(`\n--- ATS text extraction order (${path.basename(outputPath)}) ---`);
+  try {
+    const text = execFileSync('pdftotext', [outputPath, '-'], { encoding: 'utf-8' });
+    console.log(text.split('\n').filter((line) => line.trim()).join('\n'));
+  } catch (error) {
+    if (error.code === 'ENOENT') {
+      console.warn('  pdftotext not found (apt install poppler-utils)');
+    } else {
+      console.warn(`  pdftotext failed: ${error.message}`);
+    }
+  }
 }
 
 async function main() {
   if (!process.env.NUXT_PUBLIC_LOGO_DEV_API_KEY) {
     console.warn('⚠️  NUXT_PUBLIC_LOGO_DEV_API_KEY is not set — logos may not appear in the generated PDFs.');
   }
+
+  const showAts = process.argv.includes('--ats');
 
   console.log('🚀 Starting PDF generation...\n');
 
@@ -116,7 +134,8 @@ async function main() {
     server = await startServer();
 
     for (const locale of LOCALES) {
-      await generatePDF(locale);
+      const outputPath = await generatePDF(locale);
+      if (showAts) printAtsExtraction(outputPath);
     }
 
     console.log('\n✅ All PDFs generated successfully!');
