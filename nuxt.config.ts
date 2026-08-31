@@ -10,7 +10,8 @@ export default defineNuxtConfig({
   ],
   icon: {
     clientBundle: {
-      scan: true
+      scan: true,
+      icons: ['circle-flags:fr', 'circle-flags:gb']
     }
   },
   colorMode: {

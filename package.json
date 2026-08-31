@@ -22,6 +22,7 @@
     "typescript": "^5.9.3"
   },
   "devDependencies": {
+    "@iconify-json/circle-flags": "^1.2.10",
     "@kurone-kito/jsonresume-types": "^0.4.0",
     "@nuxtjs/tailwindcss": "^6.14.0",
     "dotenv": "^17.3.1",

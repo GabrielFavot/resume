@@ -15,9 +15,9 @@ const PDF_CONFIG = {
   format: 'A4',
   printBackground: true,
   margin: {
-    top: '10mm',
+    top: '9mm',
     right: '10mm',
-    bottom: '10mm',
+    bottom: '9mm',
     left: '10mm'
   }
 };

@@ -36,8 +36,9 @@
           <Icon :name="profileIcon(profile.network)" class="contact-icon" />
           {{ profile.username ? `@${profile.username}` : profile.network }}
         </span>
-        <span v-for="lang in languages" :key="lang.language" class="contact-item lang-item">
-          {{ lang.language }} <span class="lang-fluency">{{ lang.fluency }}</span>
+        <span v-for="lang in parsedLanguages" :key="lang.name" class="contact-item lang-item">
+          <Icon v-if="lang.flag" :name="lang.flag" class="contact-icon flag-icon" />
+          {{ lang.name }} <span class="lang-fluency">{{ lang.fluency }}</span>
         </span>
       </div>
     </header>
@@ -167,6 +168,22 @@ function getLogoUrl(url?: string): string | null {
   return buildLogoUrl(url, logoDevKey.value)
 }
 
+// ── Language flags ───────────────────────────────────────────────
+type ParsedLanguage = { flag: string | null; name: string; fluency?: string }
+
+function parseLanguage(label: string): { flag: string | null; name: string } {
+  const match = label.match(/^(\p{RI}\p{RI})\s*/u)
+  if (!match) return { flag: null, name: label.trim() }
+  const countryCode = Array.from(match[1])
+    .map((char) => String.fromCharCode(char.codePointAt(0)! - 0x1f1e6 + 97))
+    .join('')
+  return { flag: `circle-flags:${countryCode}`, name: label.slice(match[0].length).trim() }
+}
+
+const parsedLanguages = computed<ParsedLanguage[]>(() =>
+  languages.value.map((lang) => ({ ...parseLanguage(lang.language), fluency: lang.fluency }))
+)
+
 // ── Profile icons ─────────────────────────────────────────────────
 const PROFILE_ICONS: Record<string, string> = {
   GitHub: 'mdi:github',
@@ -193,28 +210,28 @@ function formatDateRange(startDate?: string, endDate?: string): string {
 /* ── Base ── */
 .pdf {
   font-family: ui-sans-serif, system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, "Noto Sans", sans-serif;
-  font-size: 11px;
+  font-size: 9.5px;
   color: #111827;
-  line-height: 1.4;
+  line-height: 1.36;
   background: #fff;
 }
 
 /* ── Header ── */
 .header {
-  padding-bottom: 12px;
-  margin-bottom: 14px;
+  padding-bottom: 8px;
+  margin-bottom: 10px;
 }
 
 .header-top {
   display: flex;
   align-items: flex-start;
-  gap: 20px;
-  margin-bottom: 9px;
+  gap: 18px;
+  margin-bottom: 8px;
 }
 
 .avatar {
-  width: 68px;
-  height: 68px;
+  width: 60px;
+  height: 60px;
   border-radius: 50%;
   object-fit: cover;
   flex-shrink: 0;
@@ -222,7 +239,7 @@ function formatDateRange(startDate?: string, endDate?: string): string {
 }
 
 .header-identity h1 {
-  font-size: 30px;
+  font-size: 25px;
   font-weight: 700;
   color: #111827;
   margin: 0 0 2px;
@@ -230,26 +247,26 @@ function formatDateRange(startDate?: string, endDate?: string): string {
 }
 
 .label {
-  font-size: 15px;
+  font-size: 13px;
   color: #4b5563;
-  margin: 0 0 5px;
+  margin: 0 0 4px;
   font-weight: 400;
 }
 
 .summary {
-  font-size: 11.5px;
+  font-size: 10px;
   color: #6b7280;
   margin: 0;
-  line-height: 1.5;
-  max-width: 520px;
+  line-height: 1.45;
+  max-width: 640px;
 }
 
 /* ── Contact ── */
 .contact {
   display: flex;
   flex-wrap: wrap;
-  gap: 5px;
-  font-size: 10px;
+  gap: 4px;
+  font-size: 9px;
   color: #4b5563;
 }
 
@@ -264,8 +281,8 @@ function formatDateRange(startDate?: string, endDate?: string): string {
 }
 
 .contact-icon {
-  width: 11px;
-  height: 11px;
+  width: 10px;
+  height: 10px;
   color: #6b7280;
   flex-shrink: 0;
 }
@@ -281,30 +298,41 @@ function formatDateRange(startDate?: string, endDate?: string): string {
   margin-left: 2px;
 }
 
+.flag-icon {
+  width: 11px;
+  height: 11px;
+  border-radius: 50%;
+}
+
 /* ── Body ── */
 .body {
-  display: block;
+  display: flex;
+  flex-direction: column;
 }
 
 /* ── Section ── */
 section {
-  margin-bottom: 14px;
+  margin-bottom: 8px;
+}
+
+section:last-child {
+  margin-bottom: 0;
 }
 
 h2 {
   font-size: 10px;
+  font-weight: 700;
   text-transform: uppercase;
-  letter-spacing: 0.1em;
   color: #6b7280;
   border-bottom: 1px solid #e5e7eb;
   padding-bottom: 4px;
-  margin: 0 0 9px;
+  margin: 0 0 8px;
 }
 
 /* ── Items ── */
 .item {
-  margin-bottom: 12px;
-  padding-bottom: 12px;
+  margin-bottom: 7px;
+  padding-bottom: 7px;
   border-bottom: 1px solid #f3f4f6;
 }
 
@@ -319,7 +347,7 @@ h2 {
   justify-content: space-between;
   align-items: flex-start;
   gap: 6px;
-  margin-bottom: 4px;
+  margin-bottom: 3px;
 }
 
 .item-title {
@@ -330,34 +358,34 @@ h2 {
 .company-row {
   display: flex;
   align-items: center;
-  gap: 10px;
+  gap: 8px;
 }
 
 .logo {
-  width: 35px;
-  height: 35px;
+  width: 31px;
+  height: 31px;
   border-radius: 50%;
   object-fit: contain;
   flex-shrink: 0;
   background: #f9fafb;
   border: 1px solid #e5e7eb;
-  padding: 4px;
+  padding: 3px;
 }
 
 h3 {
-  font-size: 13px;
-  font-weight: 500;
+  font-size: 12px;
+  font-weight: 600;
   color: #111827;
   margin: 0;
-  line-height: 1.3;
+  line-height: 1.25;
 }
 
 .secondary {
-  font-size: 11px;
+  font-size: 10px;
   font-weight: 400;
   color: #6b7280;
   display: block;
-  margin-top: 1px;
+  margin-top: 0;
 }
 
 .link {
@@ -369,11 +397,11 @@ h3 {
   display: flex;
   flex-direction: column;
   align-items: flex-end;
-  font-size: 10.5px;
+  font-size: 9.5px;
   color: #9ca3af;
   white-space: nowrap;
   flex-shrink: 0;
-  gap: 2px;
+  gap: 1px;
 }
 
 .meta-location {
@@ -389,14 +417,14 @@ h3 {
 
 /* ── Content ── */
 .text {
-  font-size: 11.5px;
+  font-size: 9.5px;
   color: #4b5563;
-  margin: 4px 0;
-  line-height: 1.45;
+  margin: 3px 0;
+  line-height: 1.36;
 }
 
 ul {
-  margin: 4px 0;
+  margin: 3px 0 0;
   padding: 0;
   list-style: none;
 }
@@ -405,18 +433,18 @@ li {
   display: flex;
   align-items: flex-start;
   gap: 2px;
-  font-size: 11.5px;
+  font-size: 9.5px;
   color: #4b5563;
   margin-bottom: 2px;
-  line-height: 1.4;
+  line-height: 1.34;
 }
 
 .li-icon {
-  width: 16px;
-  height: 16px;
+  width: 13px;
+  height: 13px;
   color: #9ca3af;
   flex-shrink: 0;
-  margin-top: 0px;
+  margin-top: 1px;
 }
 
 /* ── Tags ── */
@@ -428,11 +456,11 @@ li {
 }
 
 .tag {
-  font-size: 10px;
+  font-size: 9px;
   background: #f3f4f6;
   border: 1px solid #e5e7eb;
   border-radius: 3px;
-  padding: 1px 6px;
+  padding: 1px 5px;
   color: #6b7280;
 }
 </style>
