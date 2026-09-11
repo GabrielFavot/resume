@@ -4,8 +4,8 @@
         "label": "Fullstack Engineer",
         "email": "gabriel@favot.fr",
         "phone": "+33 6 19 98 42 56",
-        "url": "https://gab.pm",
-        "summary": "Fullstack Engineer with over 7 years of experience building scalable products in fast-growing startups.",
+        "url": "https://cv.gab.pm",
+        "summary": "Fullstack engineer, 7 years shipping production software in startups: 3 years on a B2B online bank, owning client projects end to end, then 3 years on a multi-tenant SaaS platform sold to CAC 40 accounts. Architecture, deployments and releases, from scoping the need to production.",
         "location": {
             "city": "Paris",
             "country": "France"
@@ -38,13 +38,10 @@
             "institution": "EFREI",
             "area": "Computer Science",
             "url": "https://efrei.fr",
-            "studyType": "Engineer degree",
+            "studyType": "Engineer degree — Software Engineering major",
             "startDate": "2014-09-01",
             "location": "Paris, France",
-            "endDate": "2019-06-30",
-            "courses": [
-                "Software Engineering major"
-            ]
+            "endDate": "2019-06-30"
         },
         {
             "institution": "Staffordshire University",
@@ -64,40 +61,44 @@
             "location": "Paris, France",
             "startDate": "2022-09-01",
             "endDate": "2025-05-31",
-            "summary": "Fullstack engineer on a SaaS governance platform using a modern TypeScript stack.",
+            "summary": "SaaS Governance platform sold to CAC 40 accounts — a single 8-person engineering team, with no dedicated frontend or DevOps team.",
             "highlights": [
-                "Built and maintained backend services with NestJS (TypeScript, PostgreSQL, Redis) and modern frontend features using Nuxt 3.",
-                "Developed a web extension distributed to 100,000+ users, with strong constraints on scalability.",
-                "Implemented Hexagonal Architecture principles across several projects to improve code decoupling and testability.",
-                "Drove the adoption of AI-assisted development tools within the team, from early GitHub Copilot integration to migrating to newer AI-driven dev tools.",
-                "Maintained CI/CD pipelines and deployed new services on GCP and Kubernetes clusters."
+                "Fullstack development (NestJS, PostgreSQL, Redis, Nuxt 3) on a multi-tenant, multi-database architecture spread across 6 interconnected repositories, at the level of rigor large accounts require.",
+                "Browser extension deployed to 100,000+ users across client organisations: feature development and release rollouts in production.",
+                "Owned the team's deployments and releases — one delivery every two weeks, from preparation to production on GCP and Kubernetes — then a broader cross-functional role covering data.",
+                "Applied Hexagonal Architecture across several projects to decouple domain from infrastructure and keep the code testable, in a team built around clean code and code review.",
+                "Brought AI into the company in 2022 with GitHub Copilot, then drove adoption across the team through to agentic development tools."
             ],
             "keywords": [
                 "NestJS",
-                "Nuxt",
+                "Nuxt 3",
                 "TypeScript",
                 "PostgreSQL",
                 "Redis",
-                "GCP"
+                "GCP",
+                "Kubernetes"
             ]
         },
         {
             "name": "Manager.one",
-            "position": "PHP Backend Software Engineer",
+            "position": "PHP Backend Engineer, then Technical Project Lead",
             "url": "https://manager.one",
             "location": "Paris, France",
             "startDate": "2019-07-01",
             "endDate": "2022-08-31",
-            "summary": "Web developer on a professional online banking platform and white-label ecosystem.",
+            "summary": "B2B online bank for professionals, a Qonto competitor (~40 people) — a 9-person backend team carrying every feature and every client project.",
             "highlights": [
-                "Contributed to the development of a large-scale B2B professional banking solution.",
-                "Held full ownership of 2 white-label projects: managed direct client relationships (from requirements gathering to feedback), technical implementation, and final delivery.",
-                "Led a team of 3 developers, conducting code reviews and mentoring on best practices."
+                "Two white-label platforms delivered end to end (La Nef, BWF): requirements gathering with the client, estimation, dispatch to the teams, technical decisions and follow-through to production.",
+                "BWF, the most demanding project of the role: adapting a banking product designed for B2B to the core banking constraints of a B2C client.",
+                "Backend development on the core platform (PHP / Yii 2, SQL Server): banking features, integrations and maintenance.",
+                "Led a team of 3 developers: onboarding a junior, code reviews and spreading best practices."
             ],
             "keywords": [
                 "PHP",
                 "Yii Framework 2",
-                "Mssql"
+                "SQL Server",
+                "White-label",
+                "Project management"
             ]
         },
         {
@@ -106,11 +107,7 @@
             "url": "https://airfrance.com",
             "startDate": "2018-04-01",
             "endDate": "2018-08-01",
-            "summary": "Frontend development on an internal operational tool using Angular and TypeScript.",
-            "highlights": [
-                "Built reusable UI components and integrated REST APIs",
-                "Worked in a small agile team with direct stakeholder interaction"
-            ],
+            "summary": "Frontend development on an internal flight-planning tool (Angular, TypeScript): reusable UI components and REST API integration, in a small agile team.",
             "keywords": [
                 "Angular",
                 "TypeScript",
@@ -120,44 +117,39 @@
     ],
     "projects": [
         {
-            "name": "Apartment Full Renovation",
+            "name": "Tech watch & side projects",
+            "startDate": "2026-03",
+            "description": "Dedicated time for keeping up and building, continuing the AI tooling adoption started at Beamy.",
+            "highlights": [
+                "Daily development with agentic dev tools (Claude Code, Cursor): spec first, every diff reviewed.",
+                "Small projects to get hands-on with new tech: a job-listing scraper (LinkedIn, Welcome to the Jungle), homegrown AI agents, a connected dashcam that counts the Clios it passes each day, and sound.gab.pm (Nuxt 3 + Spotify API)."
+            ],
+            "keywords": [
+                "Claude Code",
+                "TypeScript",
+                "AI agents",
+                "Scraping"
+            ]
+        },
+        {
+            "name": "Home server & homelab",
+            "highlights": [
+                "Home server on a mini-PC (Proxmox) hosting around fifteen open-source services and custom micro-apps via Docker, including https://cv.gab.pm.",
+                "Home Assistant for home automation, network configuration, plus maintenance and version upgrades across the stack."
+            ],
+            "keywords": [
+                "Proxmox",
+                "Docker",
+                "Home Assistant",
+                "Self-hosting",
+                "Networking"
+            ]
+        },
+        {
+            "name": "Apartment full renovation",
             "startDate": "2025-06",
             "endDate": "2026-03",
-            "description": "End-to-end renovation of a residential property.",
-            "highlights": [
-                "Planned and executed a complete renovation, including bathroom remodeling and electrical system upgrades."
-            ]
-        },
-        {
-            "name": "Personal Home Server & Homelab",
-            "description": "Self-hosted infrastructure managing home automation and private cloud services.",
-            "highlights": [
-                "Architected a home server (proxmox) hosting multiple open-source services and custom micro-apps via Docker.",
-                "Developed several applications and workflows for private use (web scraping, automation, etc.). Including https://cv.gab.pm.",
-                "Maintained the infrastructure and hosted services."
-            ],
-            "keywords": [
-                "proxmox",
-                "Self-hosting",
-                "Docker",
-                "Workflows",
-                "Infrastructure"
-            ]
-        },
-        {
-            "name": "Spotify Listening History",
-            "url": "https://sound.gab.pm",
-            "description": "A personal proof of concept developed to visualize Spotify listening history and real-time playback through a dynamic and immersive interface.",
-            "highlights": [
-                "Built with Nuxt 3 and integrated Spotify Web API to fetch and process real-time listening data and history."
-            ],
-            "keywords": [
-                "Nuxt 3",
-                "TypeScript",
-                "oAuth",
-                "Data Visualization",
-                "Side Project"
-            ]
+            "description": "Complete renovation of an apartment done solo (flooring, plumbing, electrics, painting, kitchen, bathroom), an entirely new field, from design through to renting it out."
         }
     ],
     "skills": [
@@ -165,32 +157,56 @@
             "name": "Backend",
             "keywords": [
                 "TypeScript",
-                "NestJS",
                 "Node.js",
-                "PHP"
+                "NestJS",
+                "PHP",
+                "Yii 2",
+                "REST API"
             ]
         },
         {
             "name": "Frontend",
             "keywords": [
                 "Nuxt 3",
+                "Vue.js",
                 "Angular",
                 "TypeScript"
             ]
         },
         {
-            "name": "DevOps",
+            "name": "Data",
             "keywords": [
-                "Kubernetes",
-                "CI/CD",
-                "GCP"
+                "PostgreSQL",
+                "Redis",
+                "SQL Server",
+                "Multi-tenant / multi-DB"
             ]
         },
         {
             "name": "Architecture",
             "keywords": [
                 "Hexagonal Architecture",
-                "Clean Architecture"
+                "Clean Architecture",
+                "Testing",
+                "Code review"
+            ]
+        },
+        {
+            "name": "DevOps",
+            "keywords": [
+                "GCP",
+                "Kubernetes",
+                "Docker",
+                "CI/CD",
+                "Proxmox"
+            ]
+        },
+        {
+            "name": "AI",
+            "keywords": [
+                "Claude Code",
+                "GitHub Copilot",
+                "Cursor"
             ]
         }
     ]

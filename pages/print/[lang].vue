@@ -78,10 +78,14 @@
               <Icon name="mdi:circle-small" class="li-icon" />{{ h }}
             </li>
           </ul>
-          <div v-if="job.keywords?.length" class="tags">
-            <span v-for="kw in job.keywords" :key="kw" class="tag">{{ kw }}</span>
-          </div>
         </div>
+      </section>
+
+      <section v-if="skills.length">
+        <h2>{{ $t('skills') }}</h2>
+        <p v-for="group in skills" :key="group.name" class="skill-row">
+          <span class="skill-group">{{ group.name }}</span>{{ group.keywords?.join(' · ') }}
+        </p>
       </section>
 
       <section v-if="projects.length">
@@ -102,9 +106,6 @@
               <Icon name="mdi:circle-small" class="li-icon" />{{ h }}
             </li>
           </ul>
-          <div v-if="proj.keywords?.length" class="tags">
-            <span v-for="kw in proj.keywords" :key="kw" class="tag">{{ kw }}</span>
-          </div>
         </div>
       </section>
 
@@ -152,7 +153,7 @@ const lang = route.params.lang as string
 const { setLocale, locale, t } = useI18n()
 await setLocale(['en', 'fr'].includes(lang) ? (lang as 'en' | 'fr') : 'en')
 
-const { basics, work, education, projects, languages } = await useResume()
+const { basics, work, education, projects, skills, languages } = await useResume()
 
 // ── Avatar ────────────────────────────────────────────────────────
 const firstProfileUrl = computed(() => basics.value?.profiles?.[0]?.url)
@@ -218,8 +219,8 @@ function formatDateRange(startDate?: string, endDate?: string): string {
 
 /* ── Header ── */
 .header {
-  padding-bottom: 8px;
-  margin-bottom: 10px;
+  padding-bottom: 6px;
+  margin-bottom: 8px;
 }
 
 .header-top {
@@ -312,7 +313,7 @@ function formatDateRange(startDate?: string, endDate?: string): string {
 
 /* ── Section ── */
 section {
-  margin-bottom: 8px;
+  margin-bottom: 6px;
 }
 
 section:last-child {
@@ -325,14 +326,14 @@ h2 {
   text-transform: uppercase;
   color: #6b7280;
   border-bottom: 1px solid #e5e7eb;
-  padding-bottom: 4px;
-  margin: 0 0 8px;
+  padding-bottom: 3px;
+  margin: 0 0 6px;
 }
 
 /* ── Items ── */
 .item {
-  margin-bottom: 7px;
-  padding-bottom: 7px;
+  margin-bottom: 4px;
+  padding-bottom: 4px;
   border-bottom: 1px solid #f3f4f6;
 }
 
@@ -435,8 +436,8 @@ li {
   gap: 2px;
   font-size: 9.5px;
   color: #4b5563;
-  margin-bottom: 2px;
-  line-height: 1.34;
+  margin-bottom: 1px;
+  line-height: 1.32;
 }
 
 .li-icon {
@@ -447,20 +448,23 @@ li {
   margin-top: 1px;
 }
 
-/* ── Tags ── */
-.tags {
-  display: flex;
-  flex-wrap: wrap;
-  gap: 3px;
-  margin-top: 6px;
+/* ── Skills ── */
+.skill-row {
+  font-size: 9.5px;
+  color: #4b5563;
+  margin: 0 0 2px;
+  line-height: 1.34;
 }
 
-.tag {
-  font-size: 9px;
-  background: #f3f4f6;
-  border: 1px solid #e5e7eb;
-  border-radius: 3px;
-  padding: 1px 5px;
-  color: #6b7280;
+.skill-row:last-child {
+  margin-bottom: 0;
 }
+
+.skill-group {
+  display: inline-block;
+  min-width: 122px;
+  font-weight: 600;
+  color: #111827;
+}
+
 </style>
