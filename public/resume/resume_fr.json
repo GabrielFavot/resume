@@ -64,13 +64,13 @@
             "location": "Paris, France",
             "startDate": "2022-09-01",
             "endDate": "2025-05-31",
-            "summary": "SaaS Governance pour le CAC 40 — équipe tech unique de 8 personnes, sans front ni DevOps dédiés.",
+            "summary": "SaaS Governance pour grands comptes — équipe tech & data de 13 personnes.",
             "highlights": [
-                "Développement fullstack (NestJS, PostgreSQL, Redis, Nuxt 3) sur une architecture multi-tenant et multi-base répartie sur 6 dépôts interconnectés.",
-                "Extension navigateur déployée à plus de 100 000 utilisateurs chez les clients : développement des features et suivi des montées de version en production.",
-                "Ownership des déploiements et des releases de l'équipe : une livraison toutes les deux semaines sur GCP et Kubernetes, puis rôle transverse sur la data.",
-                "Application de l'architecture hexagonale sur plusieurs projets pour découpler le métier de l'infrastructure et rendre le code testable.",
-                "Introduction de l'IA dans l'entreprise dès 2022 avec GitHub Copilot, puis accompagnement de l'adoption jusqu'aux outils de dev agentiques."
+                "Plateforme multi-tenant et multi-base (40 clients, 6 dépôts) : développement fullstack et gestion de tous les déploiements sur GCP et Kubernetes.",
+                "Chargement du portefeuille SaaS de 10 s à 2 s grâce au cache : 4 sources agrégées sur plusieurs bases, jusqu'à 5 000 SaaS × 40 propriétés par client.",
+                "Extension navigateur déployée chez 100 000+ salariés : analyse du trafic pour détecter l'usage de SaaS et remonter le shadow IT aux DSI clientes.",
+                "Initiateur du passage de toute l'équipe tech au développement assisté par IA : GitHub Copilot dès 2022, puis migration collective vers Cursor.",
+                "Architecture hexagonale et clean code appliqués sur plusieurs projets : métier isolé de l'infrastructure, code testable."
             ],
             "keywords": [
                 "NestJS",

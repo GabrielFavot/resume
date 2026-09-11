@@ -64,13 +64,13 @@
             "location": "Paris, France",
             "startDate": "2022-09-01",
             "endDate": "2025-05-31",
-            "summary": "SaaS Governance for CAC 40 accounts — a single 8-person engineering team, no dedicated frontend or DevOps.",
+            "summary": "SaaS Governance for enterprise accounts — 13-person tech & data team.",
             "highlights": [
-                "Fullstack development (NestJS, PostgreSQL, Redis, Nuxt 3) on a multi-tenant, multi-database architecture spread across 6 interconnected repositories.",
-                "Browser extension deployed to 100,000+ users across client organisations: feature development and release rollouts in production.",
-                "Owned the team's deployments and releases: one delivery every two weeks on GCP and Kubernetes, then a cross-functional role covering data.",
-                "Applied Hexagonal Architecture across several projects to decouple domain from infrastructure and keep the code testable.",
-                "Brought AI into the company in 2022 with GitHub Copilot, then drove adoption through to agentic development tools."
+                "Multi-tenant, multi-database platform (40 clients, 6 repositories): fullstack development and ownership of all deployments on GCP and Kubernetes.",
+                "Cut SaaS portfolio load time from 10 s to 2 s with caching over 4 data sources across databases, up to 5,000 SaaS × 40 properties per client.",
+                "Browser extension deployed to 100,000+ employees: analyses browsing traffic to detect SaaS usage and surface shadow IT to client IT departments.",
+                "Initiated the whole engineering team's shift to AI-assisted development: GitHub Copilot from 2022, then a team-wide move to Cursor.",
+                "Applied Hexagonal Architecture and clean code across several projects: domain isolated from infrastructure, testable code."
             ],
             "keywords": [
                 "NestJS",
