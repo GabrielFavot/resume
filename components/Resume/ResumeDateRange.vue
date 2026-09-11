@@ -23,16 +23,17 @@ const { locale, t } = useI18n()
 
 const formattedDateRange = computed(() => {
     const start = props.startDate ? new Date(props.startDate) : null
+    const end = props.endDate ? new Date(props.endDate) : new Date()
 
-    if (!start && !props.endDate) return ''
+    if (!start && !end) return ''
 
     const formatDate = (date: Date) =>
         date.toLocaleDateString(locale.value, { month: 'short', year: 'numeric' })
 
     const startStr = start ? formatDate(start) : ''
-    const endStr = props.endDate ? formatDate(new Date(props.endDate)) : t('present')
+    const endStr = end ? formatDate(end) : t('present')
 
-    return start ? `${startStr} – ${endStr}` : endStr
+    return start && end ? `${startStr} – ${endStr}` : endStr
 })
 
 const duration = computed(() => {
