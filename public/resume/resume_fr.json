@@ -66,7 +66,7 @@
             "endDate": "2025-05-31",
             "summary": "SaaS Governance pour grands comptes — équipe tech & data de 13 personnes.",
             "highlights": [
-                "Plateforme multi-tenant et multi-base (40 clients, 6 dépôts) : développement fullstack et gestion de tous les déploiements sur GCP et Kubernetes.",
+                "Plateforme multi-tenant et multi-base (40 clients, 6 dépôts) : développement fullstack et gestion de tous les déploiements sur GCP.",
                 "Chargement du portefeuille SaaS de 10 s à 2 s grâce au cache : 4 sources agrégées sur plusieurs bases, jusqu'à 5 000 SaaS × 40 propriétés par client.",
                 "Extension navigateur déployée chez 100 000+ salariés : analyse du trafic pour détecter l'usage de SaaS et remonter le shadow IT aux DSI clientes.",
                 "Initiateur du passage de toute l'équipe tech au développement assisté par IA : GitHub Copilot dès 2022, puis migration collective vers Cursor.",
@@ -78,8 +78,7 @@
                 "TypeScript",
                 "PostgreSQL",
                 "Redis",
-                "GCP",
-                "Kubernetes"
+                "GCP"
             ]
         },
         {
@@ -183,7 +182,6 @@
         {
             "name": "DevOps",
             "keywords": [
-                "Kubernetes",
                 "CI/CD",
                 "GCP"
             ]
